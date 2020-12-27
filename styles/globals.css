@@ -1,16 +1,46 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+#avatar {
+  width: 160px;
+  height: 160px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@screen sm {
+  #avatar {
+    width: 200px;
+    height: 200px;
+  }
 }
 
-* {
-  box-sizing: border-box;
+.button-link {
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+}
+
+.button-link:hover {
+  box-shadow: inset 0px 2px 4px 0px #00000029;
+}
+
+.button-link:focus {
+  box-shadow: inset 0px 2px 4px 2px #00000029;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+}
+
+svg,
+path {
+  transition: fill 0.2s;
+}
+
+#stackoverflow-icon path {
+  fill: currentColor;
+}
+
+#stackoverflow-icon:hover path:first-child {
+  fill: #bcbbbb;
+}
+
+#stackoverflow-icon:hover path:last-child {
+  fill: #f48024;
 }
