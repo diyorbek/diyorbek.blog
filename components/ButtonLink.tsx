@@ -18,7 +18,7 @@ export default function ButtonLink({
           'font-bold',
           'font-medium',
           'text-lightBlue-500',
-          'bg-white',
+          // 'bg-white',
           'focus:outline-none',
         ].join(' ') +
         ' ' +

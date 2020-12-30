@@ -1,2 +1,10 @@
 @import './home.css';
 @import './header.css';
+
+:root {
+  --page-bg-color: rgb(240, 240, 240);
+}
+
+body {
+  background-color: var(--page-bg-color);
+}

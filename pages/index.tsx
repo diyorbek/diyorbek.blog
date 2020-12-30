@@ -5,38 +5,35 @@ import ButtonLink from '../components/ButtonLink';
 import { GitHub } from '../components/icons/GitHub';
 import { LinkedIn } from '../components/icons/LinkedIn';
 import { StackOverflow } from '../components/icons/StackOverflow';
+import { PageContainer } from '../components/PageContainer';
 
 export default function Home() {
   return (
-    <div className="home-page">
+    <PageContainer>
       <Head>
-        <title>Diyorbek Sadullaev</title>
+        <title>Diyorbek's Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="header-container">
-        <header>
-          <h1 className=" text-center font-extrabold my-4">
-            Diyorbek Sadullaev
-          </h1>
-        </header>
-        <div className="header-leveler"></div>
-      </div>
-
-      <main>
+      <main className="home-page flex flex-1 flex-col items-center justify-center py-4">
         <div id="avatar-container" className="mb-4">
           <Avatar id="avatar" className="object-cover rounded-full" />
         </div>
 
-        <h1 className="sm:text-4xl text-2xl text-center font-extrabold text-gray-800 sm:mb-2 mb-0">
-          Diyorbek Sadullaev
-        </h1>
+        <div className="relative sm:mb-2 mb-0">
+          <h1 className="full-name sm:text-4xl text-2xl text-center font-extrabold">
+            Diyorbek Sadullaev
+          </h1>
+          <h1 className="full-name-2 sm:text-4xl text-2xl text-center font-extrabold">
+            Diyorbek Sadullaev
+          </h1>
+        </div>
 
         <h1 className="sm:text-xl text-md text-center text-gray-600 mb-4">
           I am a frontend developer
         </h1>
 
-        <div className="w-32 flex justify-between items-center sm:mb-8 mb-6">
+        <div className="socials rounded-full flex justify-between items-center sm:mb-8 mb-6 p-2">
           <a href="https://www.linkedin.com/in/diyorbek-sadullaev/">
             <LinkedIn className="text-2xl hover:text-blue-600 text-gray-600" />
           </a>
@@ -58,6 +55,6 @@ export default function Home() {
           <ButtonLink href="#">Blog</ButtonLink>
         </div>
       </main>
-    </div>
+    </PageContainer>
   );
 }

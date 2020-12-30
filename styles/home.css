@@ -1,6 +1,17 @@
+.home-page svg {
+  width: 1em;
+  height: 1em;
+}
+
+.home-page svg,
+.home-page path {
+  transition: fill 0.2s;
+}
+
 #avatar {
   width: 160px;
   height: 160px;
+  box-shadow: 6px 6px 12px #c4c4c4, -6px -6px 12px #ffffff;
 }
 
 @screen sm {
@@ -10,22 +21,25 @@
   }
 }
 
-.home-page {
-  @apply flex flex-col max-w-4xl min-h-screen mx-auto;
+.full-name {
+  color: transparent;
+  text-shadow: 2px 2px 3px #c4c4c4, -2px -2px 3px #ffffff;
 }
 
-.home-page main {
-  @apply flex flex-1 flex-col items-center justify-center px-2 py-4;
+.full-name-2 {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(145deg, #9b9b9b, #414141);
+  background-clip: text;
+  color: transparent;
 }
 
-.home-page svg {
-  width: 1em;
-  height: 1em;
+.socials {
+  box-shadow: 2px 2px 4px #c4c4c4, -2px -2px 4px #ffffff;
 }
 
-.home-page svg,
-.home-page path {
-  transition: fill 0.2s;
+.socials a {
+  @apply px-2;
 }
 
 #stackoverflow-icon path {
@@ -46,9 +60,11 @@
 }
 
 .button-link:hover {
-  box-shadow: inset 0px 2px 4px 0px #00000029;
+  box-shadow: inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff;
+  /* box-shadow: inset 0px 2px 4px 0px #00000029; */
 }
 
 .button-link:focus {
-  box-shadow: inset 0px 2px 4px 2px #00000029;
+  box-shadow: inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff;
+  /* box-shadow: inset 0px 2px 4px 2px #00000029; */
 }
