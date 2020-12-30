@@ -1,0 +1,25 @@
+.header-container {
+  @apply rounded-xl w-full mx-auto;
+  @apply px-2;
+}
+
+.header-container .header-leveler {
+  @apply rounded-t-full  overflow-y-hidden;
+  width: 100%;
+  height: 32px;
+}
+
+.header-container .header-leveler:after {
+  content: ' ';
+  display: block;
+  height: 64px;
+  border-radius: 32px;
+  box-shadow: inset 0px 5px 4px -3px rgba(0, 0, 0, 0.16);
+}
+
+.header-container header h1 {
+  background-color: #0008;
+  color: transparent;
+  text-shadow: 5px 5px 4px rgba(255, 255, 255, 0.6);
+  background-clip: text;
+}

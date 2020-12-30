@@ -1,0 +1,54 @@
+#avatar {
+  width: 160px;
+  height: 160px;
+}
+
+@screen sm {
+  #avatar {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.home-page {
+  @apply flex flex-col max-w-4xl min-h-screen mx-auto;
+}
+
+.home-page main {
+  @apply flex flex-1 flex-col items-center justify-center px-2 py-4;
+}
+
+.home-page svg {
+  width: 1em;
+  height: 1em;
+}
+
+.home-page svg,
+.home-page path {
+  transition: fill 0.2s;
+}
+
+#stackoverflow-icon path {
+  fill: currentColor;
+}
+
+#stackoverflow-icon:hover path:first-child {
+  fill: #bcbbbb;
+}
+
+#stackoverflow-icon:hover path:last-child {
+  fill: #f48024;
+}
+
+.button-link {
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+}
+
+.button-link:hover {
+  box-shadow: inset 0px 2px 4px 0px #00000029;
+}
+
+.button-link:focus {
+  box-shadow: inset 0px 2px 4px 2px #00000029;
+}
