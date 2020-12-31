@@ -11,7 +11,8 @@
 #avatar {
   width: 160px;
   height: 160px;
-  box-shadow: 6px 6px 12px #c4c4c4, -6px -6px 12px #ffffff;
+  background: linear-gradient(145deg, #f6f6f6, #cfcfcf);
+  box-shadow: 5px 5px 10px #c4c4c4, -5px -5px 10px #ffffff;
 }
 
 @screen sm {
@@ -36,21 +37,20 @@
 
 .socials {
   box-shadow: 2px 2px 4px #c4c4c4, -2px -2px 4px #ffffff;
+  background: var(--page-bg);
 }
 
-.socials a {
-  @apply px-2;
-}
-
-#stackoverflow-icon path {
+.socials a #stackoverflow-icon path {
   fill: currentColor;
 }
 
-#stackoverflow-icon:hover path:first-child {
+.socials a:focus #stackoverflow-icon path:first-child,
+.socials a:hover #stackoverflow-icon path:first-child {
   fill: #bcbbbb;
 }
 
-#stackoverflow-icon:hover path:last-child {
+.socials a:focus #stackoverflow-icon path:last-child,
+.socials a:hover #stackoverflow-icon path:last-child {
   fill: #f48024;
 }
 
@@ -61,10 +61,9 @@
 
 .button-link:hover {
   box-shadow: inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff;
-  /* box-shadow: inset 0px 2px 4px 0px #00000029; */
+  background: var(--inset-gradient);
 }
 
 .button-link:focus {
   box-shadow: inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff;
-  /* box-shadow: inset 0px 2px 4px 2px #00000029; */
 }

@@ -2,9 +2,10 @@
 @import './header.css';
 
 :root {
-  --page-bg-color: rgb(240, 240, 240);
+  --page-bg: linear-gradient(145deg, #f6f6f6, #dedede);
+  --inset-gradient: linear-gradient(145deg, #dedede, #f6f6f6);
 }
 
 body {
-  background-color: var(--page-bg-color);
+  background: var(--page-bg);
 }

@@ -34,14 +34,23 @@ export default function Home() {
         </h1>
 
         <div className="socials rounded-full flex justify-between items-center sm:mb-8 mb-6 p-2">
-          <a href="https://www.linkedin.com/in/diyorbek-sadullaev/">
-            <LinkedIn className="text-2xl hover:text-blue-600 text-gray-600" />
+          <a
+            className="outline-none px-2 focus:text-blue-600 hover:text-blue-600 text-gray-600"
+            href="https://www.linkedin.com/in/diyorbek-sadullaev/"
+          >
+            <LinkedIn className="text-2xl" />
           </a>
-          <a href="https://github.com/Diyorbek">
-            <GitHub className="text-2xl hover:text-gray-800 text-gray-600" />
+          <a
+            className="outline-none px-2 focus:text-gray-800 hover:text-gray-800 text-gray-600"
+            href="https://github.com/Diyorbek"
+          >
+            <GitHub className="text-2xl " />
           </a>
-          <a href="https://stackoverflow.com/users/9838291/diyorbek-sadullayev">
-            <StackOverflow className="text-2xl text-gray-600" />
+          <a
+            className="outline-none px-2 text-gray-600"
+            href="https://stackoverflow.com/users/9838291/diyorbek-sadullayev"
+          >
+            <StackOverflow className="text-2xl" />
           </a>
         </div>
 
