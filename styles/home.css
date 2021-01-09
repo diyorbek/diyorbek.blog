@@ -11,8 +11,9 @@
 #avatar {
   width: 160px;
   height: 160px;
-  background: linear-gradient(145deg, #f6f6f6, #cfcfcf);
-  box-shadow: 5px 5px 10px #c4c4c4, -5px -5px 10px #ffffff;
+  background: var(--convex-gradient);
+  box-shadow: 5px 5px 10px var(--shadow-reflection-color),
+    -5px -5px 10px var(--light-reflection-color);
 }
 
 @screen sm {
@@ -24,20 +25,25 @@
 
 .full-name {
   color: transparent;
-  text-shadow: 2px 2px 3px #c4c4c4, -2px -2px 3px #ffffff;
+  text-shadow: 2px 2px 3px var(--shadow-reflection-color),
+    -2px -2px 3px var(--light-reflection-color);
 }
 
 .full-name-2 {
   position: absolute;
   top: 0;
-  background: linear-gradient(145deg, #9b9b9b, #414141);
+  background-image: linear-gradient(145deg, #9b9b9b, #414141);
   background-clip: text;
   color: transparent;
 }
 
+.dark .full-name-2 {
+  background-image: linear-gradient(145deg, #bdbdbd, #797979);
+}
+
 .socials {
-  box-shadow: 2px 2px 4px #c4c4c4, -2px -2px 4px #ffffff;
-  background: var(--page-bg);
+  box-shadow: var(--shadow-reflection), var(--light-reflection);
+  background: var(--convex-gradient);
 }
 
 .socials a #stackoverflow-icon path {
@@ -60,10 +66,10 @@
 }
 
 .button-link:hover {
-  box-shadow: inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff;
-  background: var(--inset-gradient);
+  box-shadow: var(--inner-shadow-reflection), var(--inner-light-reflection);
+  background: var(--convey-gradient);
 }
 
 .button-link:focus {
-  box-shadow: inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff;
+  box-shadow: var(--inner-shadow-reflection), var(--inner-light-reflection);
 }

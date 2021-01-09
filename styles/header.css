@@ -3,27 +3,46 @@
 }
 
 .header-container.raised {
-  background: var(--page-bg);
+  background: var(--convex-gradient);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .header-container header h1 {
-  @apply bg-gray-900;
+  /* @apply bg-gray-900;
 
   color: transparent;
   text-shadow: 1px 0px 3px rgba(255, 255, 255, 0.6);
-  background-clip: text;
+  background-clip: text; */
+}
+
+.dark .header-container header h1 {
+  /* text-shadow: 0px 0px 0px rgb(255, 255, 255, 0.8); */
 }
 
 .dark-mode-button {
-  --yellow: rgb(156, 156, 156);
-  box-shadow: 2px 2px 4px #c4c4c4, -2px -2px 4px #ffffff;
-  background: var(--page-bg);
+  box-shadow: var(--shadow-reflection), var(--light-reflection);
+  background: var(--convex-gradient);
   position: relative;
+  outline: 0 solid transparent !important;
 }
 
 .dark-mode-button svg {
-  fill: var(--yellow);
-  filter: drop-shadow(0 0 0px rgb(255, 255, 255));
+  filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+}
+
+.dark .dark-mode-button {
+  @apply text-yellow-400;
+}
+
+.dark .dark-mode-button::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid #facd138c;
+  border-radius: 50%;
 }

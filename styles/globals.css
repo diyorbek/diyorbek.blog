@@ -1,13 +1,46 @@
-:root {
-  --page-bg: linear-gradient(145deg, #f6f6f6, #dedede);
-  --inset-gradient: linear-gradient(145deg, #dedede, #f6f6f6);
+html {
+  --light-start: #f6f6f6;
+  --light-end: #dedede;
+
+  --light-reflection-color: #ffffff;
+  --shadow-reflection-color: #c4c4c4;
+
+  --light-reflection: -2px -2px 4px var(--light-reflection-color);
+  --shadow-reflection: 2px 2px 4px var(--shadow-reflection-color);
+
+  --inner-light-reflection: inset var(--light-reflection);
+  --inner-shadow-reflection: inset var(--shadow-reflection);
+
+  --convex-gradient: linear-gradient(
+    145deg,
+    var(--light-start),
+    var(--light-end)
+  );
+  --convey-gradient: linear-gradient(
+    145deg,
+    var(--light-end),
+    var(--light-start)
+  );
+}
+
+html.dark {
+  --dark-light-start: #404040; /* colors.trueGray 700 */
+  --dark-light-end: #262626; /* colors.trueGray 800 */
+
+  --dark-light-reflection-color: #525252;
+  --dark-shadow-reflection-color: #262626; /* colors.trueGray 800 */
+
+  --light-start: var(--dark-light-start);
+  --light-end: var(--dark-light-end);
+  --light-reflection-color: var(--dark-light-reflection-color);
+  --shadow-reflection-color: var(--dark-shadow-reflection-color);
 }
 
 @import './home.css';
 @import './header.css';
 
 body {
-  background: var(--page-bg);
+  background: var(--convex-gradient);
 }
 
 svg {

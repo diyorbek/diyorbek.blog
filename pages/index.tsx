@@ -29,25 +29,25 @@ export default function Home() {
           </h1>
         </div>
 
-        <h1 className="sm:text-xl text-md text-center text-gray-600 mb-4">
+        <h1 className="sm:text-xl text-md text-center text-gray-600 dark:text-gray-300 mb-4">
           I am a frontend developer
         </h1>
 
         <div className="socials rounded-full flex justify-between items-center sm:mb-8 mb-6 p-2">
           <a
-            className="outline-none px-2 focus:text-blue-600 hover:text-blue-600 text-gray-600"
+            className="outline-none px-2 focus:text-blue-600 hover:text-blue-600 text-gray-600 dark:text-gray-400  dark:hover:text-blue-500 dark:focus:text-blue-500"
             href="https://www.linkedin.com/in/diyorbek-sadullaev/"
           >
             <LinkedIn className="text-2xl" />
           </a>
           <a
-            className="outline-none px-2 focus:text-gray-800 hover:text-gray-800 text-gray-600"
+            className="outline-none px-2 focus:text-gray-800 hover:text-gray-800 text-gray-600 dark:text-gray-400 dark:hover:text-gray-50 dark:focus:text-gray-50"
             href="https://github.com/Diyorbek"
           >
             <GitHub className="text-2xl " />
           </a>
           <a
-            className="outline-none px-2 text-gray-600"
+            className="outline-none px-2 text-gray-600 dark:text-gray-400"
             href="https://stackoverflow.com/users/9838291/diyorbek-sadullayev"
           >
             <StackOverflow className="text-2xl" />
