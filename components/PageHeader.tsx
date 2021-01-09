@@ -1,4 +1,6 @@
 import React, { HTMLAttributes, useEffect, useRef } from 'react';
+import { Bulb } from './icons/Bulb';
+import { HalfMoon } from './icons/HalfMoon';
 
 export function PageHeader({
   className,
@@ -30,10 +32,12 @@ export function PageHeader({
         className || ''
       }`}
     >
-      <header className="max-w-4xl m-auto">
-        <h1 className="sm:text-2xl text-lg font-extrabold sm:my-4 my-3">
-          Diyorbek's Blog
-        </h1>
+      <header className="max-w-4xl m-auto sm:py-4 py-3 flex justify-between items-center">
+        <h1 className="sm:text-2xl text-lg font-extrabold">Diyorbek's Blog</h1>
+
+        <div className="dark-mode-button rounded-full p-2">
+          <HalfMoon className="text-lg sm:text-xl transform rotate-45" />
+        </div>
       </header>
     </div>
   );

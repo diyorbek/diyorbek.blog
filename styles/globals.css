@@ -1,11 +1,16 @@
-@import './home.css';
-@import './header.css';
-
 :root {
   --page-bg: linear-gradient(145deg, #f6f6f6, #dedede);
   --inset-gradient: linear-gradient(145deg, #dedede, #f6f6f6);
 }
 
+@import './home.css';
+@import './header.css';
+
 body {
   background: var(--page-bg);
+}
+
+svg {
+  width: 1em;
+  height: 1em;
 }
