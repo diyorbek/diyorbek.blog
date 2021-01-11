@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React, { HTMLAttributes, useEffect, useRef } from 'react';
 import { Close } from './icons/Close';
 import { HalfMoon } from './icons/HalfMoon';
@@ -13,6 +14,10 @@ export function PageHeader({
   const mobileMenuButtonRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
+
+  const allowHTMLScroll = () => {
+    document.querySelector('html')?.classList.remove('overflow-hidden');
+  };
 
   const toggleDarkMode = () => {
     const html = document.querySelector('html');
@@ -86,26 +91,32 @@ export function PageHeader({
         }`}
       >
         <header className="max-w-4xl m-auto sm:py-4 py-3 flex justify-between items-center">
-          <a href="/">
-            <h1 className="sm:text-2xl text-lg font-extrabold text-gray-500 dark:text-gray-300">
-              Diyorbek's Blog
-            </h1>
-          </a>
+          <Link href="/">
+            <a onClick={allowHTMLScroll} className="hover:no-underline">
+              <h1 className="sm:text-2xl text-lg font-extrabold text-gray-500 dark:text-gray-300">
+                Diyorbek's Blog
+              </h1>
+            </a>
+          </Link>
           {hasMenuList && (
             <>
               <div className="hidden flex-1 sm:flex justify-end items-center pr-8">
-                <a
-                  href="#"
-                  className="text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
-                >
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
-                >
-                  Blog
-                </a>
+                <Link href="/about">
+                  <a
+                    onClick={allowHTMLScroll}
+                    className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
+                  >
+                    About
+                  </a>
+                </Link>
+                <Link href="/blog">
+                  <a
+                    onClick={allowHTMLScroll}
+                    className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
+                  >
+                    Blog
+                  </a>
+                </Link>
               </div>
 
               <button
@@ -138,20 +149,18 @@ export function PageHeader({
             >
               <div className="flex flex-col px-4">
                 <div className="py-2">
-                  <a
-                    href="#"
-                    className="text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
-                  >
-                    About
-                  </a>
+                  <Link href="/about">
+                    <a className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold">
+                      About
+                    </a>
+                  </Link>
                 </div>
                 <div className="py-2">
-                  <a
-                    href="#"
-                    className="text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
-                  >
-                    Blog
-                  </a>
+                  <Link href="/blog">
+                    <a className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold">
+                      Blog
+                    </a>
+                  </Link>
                 </div>
                 <div className="menu-divider mt-2 rounded-full bg-gray-200 dark:bg-gray-600" />
                 <div className="py-4">

@@ -13,7 +13,6 @@ export default function Home() {
     <>
       <Head>
         <title>Diyorbek's Blog</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <PageContainer header={<PageHeader hasMenuList={false} />}>
@@ -57,13 +56,13 @@ export default function Home() {
           </div>
 
           <div className="w-70 flex sm:flex-row flex-col justify-between items-center mb-6">
-            <ButtonLink href="#" className="mb-2 sm:mb-0">
+            <ButtonLink href="/cv" className="mb-2 sm:mb-0">
               Résumé
             </ButtonLink>
-            <ButtonLink href="#" className="sm:mx-2 mb-2 sm:mb-0">
+            <ButtonLink href="/about" className="sm:mx-2 mb-2 sm:mb-0">
               About me
             </ButtonLink>
-            <ButtonLink href="#">Blog</ButtonLink>
+            <ButtonLink href="/blog">Blog</ButtonLink>
           </div>
         </main>
       </PageContainer>

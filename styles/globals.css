@@ -40,10 +40,30 @@ html.dark {
 @import './header.css';
 
 body {
+  @apply text-gray-800 dark:text-gray-300;
   background: var(--convex-gradient);
 }
 
 svg {
   width: 1em;
   height: 1em;
+}
+
+.divider {
+  border-top: 1px solid var(--light-end);
+  border-bottom: 2px solid var(--light-start);
+  border-radius: 2px;
+}
+
+ul {
+  padding-left: 24px;
+}
+
+li {
+  list-style: square;
+}
+
+a {
+  @apply text-lightBlue-600 hover:text-lightBlue-500 hover:underline;
+  @apply dark:text-lightBlue-400 dark:hover:text-lightBlue-300;
 }

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { PropsWithChildren, HTMLAttributes, ReactNode } from 'react';
 import { PageHeader } from './PageHeader';
 
@@ -10,10 +11,16 @@ export function PageContainer({
   header?: ReactNode;
 }) {
   return (
-    <div {...restProps} className="flex flex-col min-h-screen mx-auto">
-      {header}
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-      <div className="flex-1 flex px-2">{children}</div>
-    </div>
+      <div {...restProps} className="flex flex-col min-h-screen mx-auto">
+        {header}
+
+        <div className="flex-1 flex px-2">{children}</div>
+      </div>
+    </>
   );
 }
