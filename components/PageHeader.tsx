@@ -150,14 +150,20 @@ export function PageHeader({
               <div className="flex flex-col px-4">
                 <div className="py-2">
                   <Link href="/about">
-                    <a className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold">
+                    <a
+                      onClick={allowHTMLScroll}
+                      className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
+                    >
                       About
                     </a>
                   </Link>
                 </div>
                 <div className="py-2">
                   <Link href="/blog">
-                    <a className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold">
+                    <a
+                      onClick={allowHTMLScroll}
+                      className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
+                    >
                       Blog
                     </a>
                   </Link>

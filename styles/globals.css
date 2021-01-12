@@ -36,8 +36,9 @@ html.dark {
   --shadow-reflection-color: var(--dark-shadow-reflection-color);
 }
 
-@import './home.css';
 @import './header.css';
+@import './home.css';
+@import './about.css';
 
 body {
   @apply text-gray-800 dark:text-gray-300;
