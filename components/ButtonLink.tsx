@@ -17,7 +17,7 @@ export default function ButtonLink({
             'px-4',
             'py-2',
             'rounded-full',
-            'text-md',
+            'text-lg',
             'text-center',
             'font-bold',
             'font-medium',

@@ -39,9 +39,10 @@ html.dark {
 @import './header.css';
 @import './home.css';
 @import './about.css';
+@import './blog.css';
 
 body {
-  @apply text-gray-800 dark:text-gray-300;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 body::before {

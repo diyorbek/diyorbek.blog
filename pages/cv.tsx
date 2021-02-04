@@ -11,98 +11,98 @@ export default function Resume() {
 
       <PageContainer>
         <div className="max-w-3xl mx-auto mb-8 px-2">
-          <h1 className="text-4xl text-center font-bold my-6 text-gray-700 dark:text-gray-300">
-            Résumé
-          </h1>
+          <h1 className="text-center">Résumé</h1>
 
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-2 text-gray-600 dark:text-gray-400">
-              Experience
-            </h2>
+          <div className="mb-10">
+            <h2 className="text-gray-600 dark:text-gray-400">Experience</h2>
+
             <div className="divider mb-2" />
 
-            <div className="flex justify-between mb-2 flex-wrap">
-              <h4 className="text-lg font-bold">
-                Frontend Developer at Super Dispatch
-              </h4>
-              <p className="italic text-gray-600 dark:text-gray-400">
+            <div className="flex justify-between flex-wrap mb-4">
+              <h3>Frontend Developer at Super Dispatch</h3>
+
+              <span className="italic text-gray-600 dark:text-gray-400">
                 September 2019 - Present
-              </p>
-            </div>
-
-            <ul className="mb-4">
-              <li className="mb-2">
-                Developed and maintained the web applications and email
-                templates of the company. Technologies: ReactJS, Redux,
-                TypeScript.
-              </li>
-              <li className="mb-2">
-                Migrated Django template pages to ReactJS
-              </li>
-              <li>
-                Building design system elements (based on Material UI) for the
-                web applications of the company.
-              </li>
-            </ul>
-
-            <div className="flex justify-between mb-2 flex-wrap">
-              <h4 className="text-lg font-bold">
-                Frontend Developer at PeriPlus AG
-              </h4>
-              <p className="italic text-gray-600 dark:text-gray-400">
-                December 2019 - September 2019
-              </p>
+              </span>
             </div>
 
             <ul>
-              <li className="mb-2">
-                Built a mobile app in React Native for container number
-                recognition.
-              </li>
-              <li className="mb-2">
-                Built the frontend of transportation management system in
-                ReactJS
+              <li>
+                <p>
+                  Developed and maintained the web applications and email
+                  templates of the company. Technologies: ReactJS, Redux,
+                  TypeScript.
+                </p>
               </li>
               <li>
-                Built the frontend of a document recognition app in ReactJS
+                <p>Migrated Django template pages to ReactJS</p>
+              </li>
+              <li>
+                <p>
+                  Building design system elements (based on Material UI) for the
+                  web applications of the company.
+                </p>
+              </li>
+            </ul>
+
+            <div className="flex justify-between flex-wrap mb-4">
+              <h3>Frontend Developer at PeriPlus AG</h3>
+
+              <span className="italic text-gray-600 dark:text-gray-400">
+                December 2019 - September 2019
+              </span>
+            </div>
+
+            <ul>
+              <li>
+                <p>
+                  Built a mobile app in React Native for container number
+                  recognition.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Built the frontend of transportation management system in
+                  ReactJS
+                </p>
+              </li>
+              <li>
+                <p>
+                  Built the frontend of a document recognition app in ReactJS
+                </p>
               </li>
             </ul>
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-2 text-gray-600 dark:text-gray-400">
-              Education
-            </h2>
+          <div className="mb-10">
+            <h2 className="text-gray-600 dark:text-gray-400">Education</h2>
+
             <div className="divider mb-2" />
 
-            <div className="flex justify-between mb-2 flex-wrap">
-              <h4 className="text-lg font-bold">
-                Polish-Japanese Academy of IT
-              </h4>
-              <p className="italic text-gray-600 dark:text-gray-400">
+            <div className="flex justify-between flex-wrap mb-4">
+              <h3>Polish-Japanese Academy of IT</h3>
+
+              <span className="italic text-gray-600 dark:text-gray-400">
                 October 2020 - February 2024
-              </p>
+              </span>
             </div>
+
             <div className="flex justify-between flex-wrap">
-              <h4 className="text-lg font-bold">
-                Tashkent University of Information Technologies
-              </h4>
-              <p className="italic text-gray-600 dark:text-gray-400">
+              <h3>Tashkent University of Information Technologies</h3>
+
+              <span className="italic text-gray-600 dark:text-gray-400">
                 September 2017 - December 2018
-              </p>
+              </span>
             </div>
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-2 text-gray-600 dark:text-gray-400">
-              Projects
-            </h2>
+          <div className="mb-10">
+            <h2 className="text-gray-600 dark:text-gray-400">Projects</h2>
+
             <div className="divider mb-2" />
 
-            <div className="flex justify-between mb-2 flex-wrap">
-              <h4 className="text-lg font-bold">Fonetika.Uz</h4>
-            </div>
-            <p className="mb-4">
+            <h3>Fonetika.Uz</h3>
+            <p>
               <a target="_blank" rel="noreferrer" href="https://fonetika.uz/">
                 Fonetika.Uz
               </a>{' '}
@@ -111,10 +111,8 @@ export default function Resume() {
               the input word, and categories of the letters in the word.
             </p>
 
-            <div className="flex justify-between mb-2 flex-wrap">
-              <h4 className="text-lg font-bold">MusicSpider</h4>
-            </div>
-            <p className="">
+            <h3>MusicSpider</h3>
+            <p>
               <a
                 target="_blank"
                 rel="noreferrer"

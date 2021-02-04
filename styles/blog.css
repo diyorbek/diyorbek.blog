@@ -1,0 +1,29 @@
+h1 {
+  @apply text-3xl font-bold;
+  @apply mt-8 mb-6;
+}
+
+h2 {
+  @apply text-2xl font-bold;
+  @apply mb-4;
+}
+
+h3 {
+  @apply text-xl font-bold;
+  @apply mb-2;
+}
+
+h4 {
+  @apply text-lg font-bold;
+  @apply mb-2;
+}
+
+p {
+  @apply text-lg text-warmGray-600 dark:text-warmGray-300;
+  @apply mb-6;
+}
+
+b,
+strong {
+  @apply text-black dark:text-white;
+}

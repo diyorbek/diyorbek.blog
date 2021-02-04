@@ -106,7 +106,7 @@ export function PageHeader({
         <header className="max-w-4xl m-auto sm:py-4 py-3 flex justify-between items-center">
           <Link href="/">
             <a onClick={allowHTMLScroll} className="hover:no-underline">
-              <h1 className="sm:text-2xl text-lg font-extrabold text-gray-500 dark:text-gray-300">
+              <h1 className="my-0 sm:text-2xl text-xl font-extrabold text-gray-500 dark:text-gray-300">
                 Diyorbek's Blog
               </h1>
             </a>
@@ -117,18 +117,12 @@ export function PageHeader({
                 {menuItems.map(({ pathname, label }) =>
                   currentPathname !== pathname ? (
                     <Link key={pathname} href={pathname}>
-                      <a
-                        onClick={allowHTMLScroll}
-                        className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
-                      >
+                      <a onClick={allowHTMLScroll} className="menu-item px-4">
                         {label}
                       </a>
                     </Link>
                   ) : (
-                    <a
-                      key={pathname}
-                      className="hover:no-underline pointer-events-none text-lightBlue-500 dark:text-lightBlue-400 px-4 font-semibold"
-                    >
+                    <a key={pathname} className="menu-item active px-4">
                       {label}
                     </a>
                   )
@@ -168,18 +162,12 @@ export function PageHeader({
                   <div key={pathname} className="py-2">
                     {currentPathname !== pathname ? (
                       <Link href={pathname}>
-                        <a
-                          onClick={allowHTMLScroll}
-                          className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
-                        >
+                        <a onClick={allowHTMLScroll} className="menu-item">
                           {label}
                         </a>
                       </Link>
                     ) : (
-                      <a
-                        key={pathname}
-                        className="hover:no-underline pointer-events-none text-lightBlue-500 dark:text-lightBlue-400 font-semibold"
-                      >
+                      <a key={pathname} className="menu-item active">
                         {label}
                       </a>
                     )}

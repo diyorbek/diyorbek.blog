@@ -22,17 +22,17 @@ export default function Home() {
           </div>
 
           <div className="relative sm:mb-2 mb-0">
-            <h1 className="full-name sm:text-4xl text-2xl text-center font-extrabold">
+            <h1 className="full-name sm:text-4xl text-2xl text-center font-extrabold m-0">
               Diyorbek Sadullaev
             </h1>
-            <h1 className="full-name-2 sm:text-4xl text-2xl text-center font-extrabold">
+            <h1 className="full-name-2 sm:text-4xl text-2xl text-center font-extrabold m-0">
               Diyorbek Sadullaev
             </h1>
           </div>
 
-          <h1 className="sm:text-xl text-md text-center text-gray-600 dark:text-gray-300 mb-4">
+          <p className="sm:text-xl text-md text-center text-gray-600 dark:text-gray-300">
             I am a frontend developer
-          </h1>
+          </p>
 
           <div className="socials rounded-full flex justify-between items-center sm:mb-8 mb-6 p-2">
             <a

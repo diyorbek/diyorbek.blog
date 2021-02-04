@@ -11,9 +11,8 @@ export default function About() {
 
       <PageContainer>
         <div className="about-page max-w-2xl mx-auto mb-8 px-2">
-          <h1 className="text-4xl text-center font-bold my-6 text-gray-700 dark:text-gray-300">
-            About Me
-          </h1>
+          <h1 className="text-center">About Me</h1>
+
           <p className="mb-2">Hello! My name is Diyorbek Sadullaev.</p>
           <p className="mb-2">
             I am a 22-year-old frontend developer and I work at Super Dispatch.
