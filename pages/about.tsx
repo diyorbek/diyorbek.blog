@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About Diyorbek Sadullaev</title>
+        <title>About | Diyorbek's Blog</title>
       </Head>
 
       <PageContainer>

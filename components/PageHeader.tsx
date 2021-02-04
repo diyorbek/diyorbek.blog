@@ -1,15 +1,28 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { HTMLAttributes, useEffect, useRef } from 'react';
 import { Close } from './icons/Close';
 import { HalfMoon } from './icons/HalfMoon';
 import { Menu } from './icons/Menu';
+
+const menuItems = [
+  {
+    pathname: '/about',
+    label: 'About',
+  },
+  {
+    pathname: '/blog',
+    label: 'Blog',
+  },
+];
 
 export function PageHeader({
   className,
   hasMenuList = true,
   ...restProps
 }: HTMLAttributes<HTMLDivElement> & { hasMenuList?: boolean }) {
+  const { pathname: currentPathname } = useRouter();
   const headerRef = useRef<HTMLDivElement | null>(null);
   const mobileMenuButtonRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
@@ -101,22 +114,25 @@ export function PageHeader({
           {hasMenuList && (
             <>
               <div className="hidden flex-1 sm:flex justify-end items-center pr-8">
-                <Link href="/about">
-                  <a
-                    onClick={allowHTMLScroll}
-                    className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
-                  >
-                    About
-                  </a>
-                </Link>
-                <Link href="/blog">
-                  <a
-                    onClick={allowHTMLScroll}
-                    className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
-                  >
-                    Blog
-                  </a>
-                </Link>
+                {menuItems.map(({ pathname, label }) =>
+                  currentPathname !== pathname ? (
+                    <Link key={pathname} href={pathname}>
+                      <a
+                        onClick={allowHTMLScroll}
+                        className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 px-4 font-semibold"
+                      >
+                        {label}
+                      </a>
+                    </Link>
+                  ) : (
+                    <a
+                      key={pathname}
+                      className="hover:no-underline pointer-events-none text-lightBlue-500 dark:text-lightBlue-400 px-4 font-semibold"
+                    >
+                      {label}
+                    </a>
+                  )
+                )}
               </div>
 
               <button
@@ -148,27 +164,30 @@ export function PageHeader({
               className="mobile-menu sm:hidden transition-all"
             >
               <div className="flex flex-col px-4">
-                <div className="py-2">
-                  <Link href="/about">
-                    <a
-                      onClick={allowHTMLScroll}
-                      className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
-                    >
-                      About
-                    </a>
-                  </Link>
-                </div>
-                <div className="py-2">
-                  <Link href="/blog">
-                    <a
-                      onClick={allowHTMLScroll}
-                      className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
-                    >
-                      Blog
-                    </a>
-                  </Link>
-                </div>
+                {menuItems.map(({ pathname, label }) => (
+                  <div key={pathname} className="py-2">
+                    {currentPathname !== pathname ? (
+                      <Link href={pathname}>
+                        <a
+                          onClick={allowHTMLScroll}
+                          className="hover:no-underline text-gray-500 hover:text-lightBlue-500 dark:text-gray-300 dark:hover:text-lightBlue-400 font-semibold"
+                        >
+                          {label}
+                        </a>
+                      </Link>
+                    ) : (
+                      <a
+                        key={pathname}
+                        className="hover:no-underline pointer-events-none text-lightBlue-500 dark:text-lightBlue-400 font-semibold"
+                      >
+                        {label}
+                      </a>
+                    )}
+                  </div>
+                ))}
+
                 <div className="menu-divider mt-2 rounded-full bg-gray-200 dark:bg-gray-600" />
+
                 <div className="py-4">
                   <button
                     onClick={toggleDarkMode}
