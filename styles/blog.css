@@ -18,12 +18,27 @@ h4 {
   @apply mb-2;
 }
 
-p {
+p,
+li {
   @apply text-lg text-warmGray-600 dark:text-warmGray-300;
+}
+
+p {
   @apply mb-6;
 }
 
 b,
 strong {
   @apply text-black dark:text-white;
+}
+
+.ql-editor {
+  @apply mb-8;
+  /* padding: 0 0 !important; */
+}
+
+.ql-editor p,
+.ql-editor ol,
+.ql-editor ul {
+  @apply mb-6 !important;
 }

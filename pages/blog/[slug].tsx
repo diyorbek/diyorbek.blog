@@ -1,8 +1,13 @@
 import Head from 'next/head';
-import React from 'react';
+import { useMemo } from 'react';
 import { PageContainer } from '../../components/PageContainer';
+import ParseHTML from 'html-react-parser';
 
-export default function Blog() {
+export default function BlogPost() {
+  // const post = useMemo(() => {
+  //   return ParseHTML(localStorage.getItem('blog') || '');
+  // }, []);
+
   return (
     <>
       <Head>
