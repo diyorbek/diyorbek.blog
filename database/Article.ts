@@ -3,6 +3,7 @@ import { Document, Model, model, models, Schema } from 'mongoose';
 export interface ArticleDocument extends Document {
   title: string;
   content: string;
+  slug: string;
   tags: string[];
 }
 
@@ -19,9 +20,15 @@ const ArticleSchema = new Schema(
       required: [true, 'Post should have content'],
       trim: true,
     },
+    slug: {
+      type: String,
+      required: [true, 'Post should have a slug'],
+      trim: true,
+    },
     tags: [
       {
         type: String,
+        trim: true,
       },
     ],
   },
