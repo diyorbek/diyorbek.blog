@@ -4,11 +4,16 @@ import { PageContainer } from '../../components/PageContainer';
 import ParseHTML from 'html-react-parser';
 import { ArticleDTO, getArticle } from '../../database/Article';
 import { formatDate } from '../../utils/dateUtils';
+import NotFoundPage from '../404';
 
-export default function BlogPost({ post }: { post: ArticleDTO }) {
+export default function BlogPost({ post }: { post: ArticleDTO | null }) {
   const content = useMemo(() => {
-    return ParseHTML(post.content);
-  }, [post.content]);
+    return post ? ParseHTML(post.content) : '';
+  }, [post?.content]);
+
+  if (!post) {
+    return <NotFoundPage />;
+  }
 
   return (
     <>
