@@ -42,3 +42,10 @@ strong {
 .ql-editor ul {
   @apply mb-6 !important;
 }
+
+.ql-editor img,
+.ql-editor iframe,
+.blog-content img,
+.blog-content iframe {
+  margin: auto;
+}

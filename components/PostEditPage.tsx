@@ -2,8 +2,10 @@ import Head from 'next/head';
 import { useState } from 'react';
 import slugify from 'slugify';
 import { PageContainer } from './PageContainer';
-import { TextEditor } from './TextEditor';
 import { ArticleDTO } from '../database/Article';
+import dynamic from 'next/dynamic';
+
+const TextEditor = dynamic(() => import('./TextEditor'), { ssr: false });
 
 interface PostEditPageProps {
   edit?: boolean;

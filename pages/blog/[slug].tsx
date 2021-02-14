@@ -28,7 +28,7 @@ export default function BlogPost({ post }: { post: ArticleDTO | null }) {
             <span className="text-gray-400">{formatDate(post.createdAt)}</span>
           </div>
 
-          <div className="grid grid-cols-1 gap-2">{content}</div>
+          <div className="blog-content">{content}</div>
         </div>
       </PageContainer>
     </>
