@@ -79,3 +79,16 @@ export async function getArticle(slug: string) {
 export async function createArticle(body: any) {
   return await Article.create(body);
 }
+
+export async function updateArticle(slug: string, body: any) {
+  const article = await getArticle(slug);
+
+  if (article) {
+    article.set(body);
+    await article.save();
+
+    return article;
+  }
+
+  return null;
+}

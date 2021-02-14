@@ -1,44 +1,22 @@
-import Head from 'next/head';
-import { useState } from 'react';
-import { PageContainer } from '../../../components/PageContainer';
-import { TextEditor } from '../../../components/TextEditor';
+import PostEditPage from '../../../components/PostEditPage';
+import { ArticleDTO, getArticle } from '../../../database/Article';
+import NotFoundPage from '../../404';
 
-export default function EditBlogPost() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+export default function EditBlogPost({ post }: { post: ArticleDTO | null }) {
+  if (!post) {
+    return <NotFoundPage />;
+  }
+  console.log(post);
 
-  return (
-    <>
-      <Head>
-        <title>Diyorbek's Blog Editor</title>
-      </Head>
+  return <PostEditPage edit={true} post={post} />;
+}
 
-      <PageContainer>
-        <div className="max-w-2xl mx-auto mb-8 px-2">
-          <div className="mb-8">
-            <h1
-              className="mb-2"
-              contentEditable={true}
-              suppressContentEditableWarning={true}
-              onInput={({ currentTarget }) => {
-                setTitle(currentTarget.innerText);
-              }}
-            >
-              Blogs Title
-            </h1>
-          </div>
+export async function getServerSideProps({ params }: any) {
+  const article = await getArticle(params.slug);
 
-          <div className="mb-8">
-            <TextEditor
-              onChangeContent={(content) => {
-                setContent(content);
-              }}
-            />
-          </div>
-
-          <button className="btn">Save</button>
-        </div>
-      </PageContainer>
-    </>
-  );
+  return {
+    props: {
+      post: JSON.parse(JSON.stringify(article)),
+    },
+  };
 }

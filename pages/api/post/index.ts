@@ -1,8 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createArticle, getArticlesList } from '../../database/Article';
-import { connectDB } from '../../database/connect';
+import { createArticle, getArticlesList } from '../../../database/Article';
+import { connectDB } from '../../../database/connect';
 
 connectDB();
 
