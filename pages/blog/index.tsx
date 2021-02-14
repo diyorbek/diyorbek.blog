@@ -2,8 +2,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import { PageContainer } from '../../components/PageContainer';
+import { ArticleDTO, getArticlesList } from '../../database/Article';
+import { formatDate } from '../../utils/dateUtils';
 
-export default function Blog() {
+interface BlogProps {
+  posts: ArticleDTO[];
+}
+
+export default function Blog({ posts }: BlogProps) {
   return (
     <>
       <Head>
@@ -14,21 +20,16 @@ export default function Blog() {
         <div className="max-w-2xl mx-auto mb-8 px-2">
           <h1 className="text-center">Recent Blogs</h1>
 
-          <div className="grid grid-cols-1 gap-2">
-            {[...new Array(17)].map((_, i) => (
-              <Link href="/blog/we-are">
-                <a
-                  key={i}
-                  className="hover:no-underline text-gray-700 hover:text-lightBlue-600 dark:text-gray-200 dark:hover:text-lightBlue-400"
-                >
-                  <span className="text-gray-400">Feb 3, 2021</span>
+          <div className="article-list grid grid-cols-1 gap-2">
+            {posts.map(({ _id, slug, title, contentPreview, createdAt }) => (
+              <Link href={`/blog/${slug}`} key={_id}>
+                <a className="hover:no-underline text-gray-700 hover:text-lightBlue-600 dark:text-gray-200 dark:hover:text-lightBlue-400">
+                  <span className="text-gray-400">{formatDate(createdAt)}</span>
 
-                  <h3 className="mt-2">We've got more coming...</h3>
+                  <h3 className="mt-2">{title}</h3>
 
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Want to hear from us when we add new components? Sign up for
-                    our newsletter and we'll email you every time we release a
-                    new batch of components.
+                    {contentPreview}...
                   </p>
 
                   {/* <Tag>React</Tag> */}
@@ -42,4 +43,14 @@ export default function Blog() {
       </PageContainer>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const articles = await getArticlesList();
+
+  return {
+    props: {
+      posts: JSON.parse(JSON.stringify(articles)),
+    },
+  };
 }

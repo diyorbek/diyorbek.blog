@@ -68,6 +68,10 @@ svg {
   border-radius: 2px;
 }
 
+.article-list > a:last-child .divider {
+  display: none;
+}
+
 ul {
   padding-left: 24px;
 }

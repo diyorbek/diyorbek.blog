@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Article } from '../../database/Article';
+import { createArticle, getArticlesList } from '../../database/Article';
 import { connectDB } from '../../database/connect';
 
 connectDB();
@@ -9,7 +9,7 @@ connectDB();
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
-      const blogs = await Article.find({});
+      const blogs = await getArticlesList();
 
       res.json({ data: blogs });
     } catch (error) {
@@ -17,7 +17,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
   } else if (req.method === 'POST') {
     try {
-      const blog = await Article.create(req.body);
+      const blog = await createArticle(req.body);
 
       res.status(201).json({ data: blog });
     } catch (error) {

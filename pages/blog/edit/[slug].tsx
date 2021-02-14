@@ -10,7 +10,7 @@ export default function EditBlogPost() {
   return (
     <>
       <Head>
-        <title>Recent Blogs | Diyorbek's Blog</title>
+        <title>Diyorbek's Blog Editor</title>
       </Head>
 
       <PageContainer>

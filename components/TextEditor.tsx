@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 import 'react-quill/dist/quill.snow.css';
+import 'react-quill/dist/quill.bubble.css';
 // import type { Quill } from 'react-quill';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
@@ -53,7 +54,7 @@ const editoModules = {
   toolbar: [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ['bold', 'italic', 'underline', 'strike'], // toggled buttons
-    ['blockquote', 'code-block', 'image', 'video', 'code-block', 'clean'],
+    ['blockquote', 'image', 'video', 'code-block', 'clean'],
 
     [{ list: 'ordered' }, { list: 'bullet' }],
     [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
