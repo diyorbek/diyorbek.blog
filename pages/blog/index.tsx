@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { PageContainer } from '../../components/PageContainer';
 import { ArticleDTO, getArticlesList } from '../../database/Article';
+import { connectDB } from '../../database/connect';
 import { formatDate } from '../../utils/dateUtils';
 
 interface BlogProps {
@@ -46,6 +47,7 @@ export default function Blog({ posts }: BlogProps) {
 }
 
 export async function getStaticProps() {
+  await connectDB();
   const articles = await getArticlesList();
 
   return {

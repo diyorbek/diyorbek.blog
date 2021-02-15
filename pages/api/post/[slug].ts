@@ -1,5 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { updateArticle } from '../../../database/Article';
+import { connectDB } from '../../../database/connect';
+
+connectDB();
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'PATCH') {

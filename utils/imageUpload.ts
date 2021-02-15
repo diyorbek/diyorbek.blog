@@ -4,16 +4,14 @@ export async function saveToServer(file: File) {
   const body = new FormData();
   body.append('image', file);
 
-  const res = await fetch(
-    'https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22',
-    { method: 'POST', body }
-  );
+  const res = await fetch('/api/upload', { method: 'POST', body });
 
-  return (await res.json()).data.url;
+  return (await res.json()).data;
 }
 
 // copied and modified from https://github.com/noeloconnell/quill-image-uploader
 class ImageUploader {
+  private imagePlaceholder = '[Loading...]';
   public range: any | null;
   public fileHolder: HTMLInputElement | null = null;
 
@@ -161,13 +159,13 @@ class ImageUploader {
 
   insertBase64Image(url: string | ArrayBuffer) {
     const range = this.range;
-    this.quill.insertText(range.index, 'Loading', `${url}`, 'user');
+    this.quill.insertText(range.index, this.imagePlaceholder, `${url}`, 'user');
   }
 
   insertToEditor(url: string) {
     const range = this.range;
     // Delete the placeholder image
-    this.quill.deleteText(range.index, 3, 'user');
+    this.quill.deleteText(range.index, this.imagePlaceholder.length, 'user');
     // Insert the server saved image
     this.quill.insertEmbed(range.index, 'image', `${url}`, 'user');
 

@@ -5,6 +5,7 @@ import ParseHTML from 'html-react-parser';
 import { ArticleDTO, getArticle } from '../../database/Article';
 import { formatDate } from '../../utils/dateUtils';
 import NotFoundPage from '../404';
+import { connectDB } from '../../database/connect';
 
 export default function BlogPost({ post }: { post: ArticleDTO | null }) {
   const content = useMemo(() => {
@@ -36,6 +37,7 @@ export default function BlogPost({ post }: { post: ArticleDTO | null }) {
 }
 
 export async function getServerSideProps({ params }: any) {
+  await connectDB();
   const article = await getArticle(params.slug);
 
   return {
