@@ -23,13 +23,20 @@ li {
   @apply text-lg text-warmGray-600 dark:text-warmGray-300;
 }
 
-p {
+p,
+code,
+pre,
+blockquote {
   @apply mb-6;
 }
 
 b,
 strong {
   @apply text-black dark:text-white;
+}
+
+code,
+pre {
 }
 
 .ql-editor {
@@ -39,7 +46,10 @@ strong {
 
 .ql-editor p,
 .ql-editor ol,
-.ql-editor ul {
+.ql-editor ul,
+.ql-editor pre,
+.ql-editor code,
+.ql-editor blockquote {
   @apply mb-6 !important;
 }
 

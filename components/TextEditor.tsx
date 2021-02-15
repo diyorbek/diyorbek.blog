@@ -3,10 +3,16 @@ import 'react-quill/dist/quill.bubble.css';
 import ReactQuill from 'react-quill';
 import Quill from 'quill';
 import ImageUploader, { saveToServer } from '../utils/imageUpload';
+import hljs from 'highlight.js';
+import { CodeBlot } from '../utils/codeBlot';
 
+Quill.register(CodeBlot);
 Quill.register('modules/imageUploader', ImageUploader);
 
 const editoModules = {
+  syntax: {
+    highlight: (text: string) => hljs.highlightAuto(text).value,
+  },
   toolbar: [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ['bold', 'italic', 'underline', 'strike'], // toggled buttons

@@ -71,6 +71,10 @@ export default function PostEditPage({
     <>
       <Head>
         <title>Diyorbek's Blog Editor</title>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css"
+        />
       </Head>
 
       <PageContainer>
