@@ -6,13 +6,13 @@ import formidable, { File } from 'formidable';
 import { withApiAuthRequired } from '@auth0/nextjs-auth0';
 
 const s3 = new S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  accessKeyId: process.env.ACCESS_KEY_AWS,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY_AWS,
 });
 
 function uploadFile(body: Body) {
   const params = {
-    Bucket: process.env.AWS_BUCKET_NAME,
+    Bucket: process.env.BUCKET_NAME_AWS,
     Key: `${uuid.v4()}.jpg`,
     Body: body,
   } as PutObjectRequest;
