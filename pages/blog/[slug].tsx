@@ -43,6 +43,7 @@ export default function BlogPost({ post }: { post: ArticleDTO | null }) {
 }
 
 export async function getServerSideProps({ params }: any) {
+  await connectDB();
   const article = await getArticle(params.slug);
 
   return {
