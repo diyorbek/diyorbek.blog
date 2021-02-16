@@ -47,7 +47,7 @@ export default function PostEditPage({
           body: JSON.stringify(body),
         });
       } else {
-        response = await fetch('/api/post', {
+        response = await fetch('/api/post/create', {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',

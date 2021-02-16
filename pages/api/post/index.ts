@@ -15,14 +15,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
-  } else if (req.method === 'POST') {
-    try {
-      const blog = await createArticle(req.body);
-
-      res.status(201).json({ data: blog });
-    } catch (error) {
-      res.status(400).json({ error: error.message });
-    }
   } else {
     res.status(400);
   }

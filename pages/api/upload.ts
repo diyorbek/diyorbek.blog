@@ -3,6 +3,7 @@ import S3, { PutObjectRequest, ManagedUpload, Body } from 'aws-sdk/clients/s3';
 import * as uuid from 'uuid';
 import { createReadStream } from 'fs';
 import formidable, { File } from 'formidable';
+import { withApiAuthRequired } from '@auth0/nextjs-auth0';
 
 const s3 = new S3({
   accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -43,20 +44,22 @@ function parseFormImage(req: NextApiRequest) {
   });
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === 'POST') {
-    try {
-      const image = await parseFormImage(req);
-      const { Location } = await uploadFile(createReadStream(image.path));
+export default withApiAuthRequired(
+  async (req: NextApiRequest, res: NextApiResponse) => {
+    if (req.method === 'POST') {
+      try {
+        const image = await parseFormImage(req);
+        const { Location } = await uploadFile(createReadStream(image.path));
 
-      res.status(200).json({ data: Location });
-    } catch (error) {
-      res.status(400).json({ error: error.message });
+        res.status(200).json({ data: Location });
+      } catch (error) {
+        res.status(400).json({ error: error.message });
+      }
+    } else {
+      res.status(400);
     }
-  } else {
-    res.status(400);
   }
-};
+);
 
 export const config = {
   api: {
