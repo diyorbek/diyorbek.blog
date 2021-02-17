@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
@@ -46,40 +47,14 @@ export default function Blog({ posts }: BlogProps) {
   );
 }
 
-export async function getStaticProps() {
-  // await connectDB();
-  // const articles = await getArticlesList();
+export const getStaticProps: GetStaticProps<BlogProps, any> = async (ctx) => {
+  await connectDB();
+  const articles = await getArticlesList();
 
   return {
+    revalidate: 1,
     props: {
-      posts: JSON.parse(
-        JSON.stringify([
-          {
-            _id: '60287b49af7d0c6881844c7b',
-            contentPreview:
-              "If you want to render the built-in error page you can by importing the Error component:\nimport Error from 'next/error'\n\nexport async function getServe",
-            createdAt: '2021-02-14T01:22:17.196Z',
-            slug: 'new-blog-here',
-            title: 'New Blog Here',
-          },
-          {
-            _id: '6028685eaf7d0c6881844c7a',
-            contentPreview:
-              'OoOOkau 77 of child schemas (from document arrays and single nested subdocs) and their corresponding compiled models. Each element of the array is an',
-            createdAt: '2021-02-14T00:01:34.831Z',
-            slug: 'test-post-22',
-            title: 'Test post 22',
-          },
-          {
-            _id: '602867f9af7d0c6881844c79',
-            contentPreview:
-              'Array of child schemas (from document arrays and single nested subdocs) and their corresponding compiled models. Each element of the array is an objec',
-            createdAt: '2021-02-13T23:59:53.260Z',
-            slug: 'test-post',
-            title: 'Test post',
-          },
-        ])
-      ),
+      posts: JSON.parse(JSON.stringify(articles)),
     },
   };
-}
+};
