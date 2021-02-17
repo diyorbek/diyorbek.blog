@@ -23,23 +23,31 @@ export default function Blog({ posts }: BlogProps) {
           <h1 className="text-center">Recent Blogs</h1>
 
           <div className="article-list grid grid-cols-1 gap-2">
-            {posts.map(({ _id, slug, title, contentPreview, createdAt }) => (
-              <Link href={`/blog/${slug}`} key={_id}>
-                <a className="hover:no-underline text-gray-700 hover:text-lightBlue-600 dark:text-gray-200 dark:hover:text-lightBlue-400">
-                  <span className="text-gray-400">{formatDate(createdAt)}</span>
+            {posts.length > 0 ? (
+              posts.map(({ _id, slug, title, contentPreview, createdAt }) => (
+                <Link href={`/blog/${slug}`} key={_id}>
+                  <a className="hover:no-underline text-gray-700 hover:text-lightBlue-600 dark:text-gray-200 dark:hover:text-lightBlue-400">
+                    <span className="text-gray-400">
+                      {formatDate(createdAt)}
+                    </span>
 
-                  <h3 className="mt-2">{title}</h3>
+                    <h3 className="mt-2">{title}</h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    {contentPreview}...
-                  </p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      {contentPreview}...
+                    </p>
 
-                  {/* <Tag>React</Tag> */}
+                    {/* <Tag>React</Tag> */}
 
-                  <div className="divider my-4" />
-                </a>
-              </Link>
-            ))}
+                    <div className="divider my-4" />
+                  </a>
+                </Link>
+              ))
+            ) : (
+              <h2 className="mt-24 text-warmGray-400 text-center">
+                No articles
+              </h2>
+            )}
           </div>
         </div>
       </PageContainer>

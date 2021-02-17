@@ -14,6 +14,7 @@ interface Article {
 export interface ArticleDTO extends Article {
   _id: string;
 }
+console.log(models);
 
 interface ArticleDocument extends Article, Document {}
 

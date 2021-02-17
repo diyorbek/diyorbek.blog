@@ -10,7 +10,7 @@ import {
 import { formatDate } from '../../utils/dateUtils';
 import NotFoundPage from '../404';
 import { connectDB } from '../../database/connect';
-import { GetStaticProps, GetStaticPropsResult } from 'next';
+import { GetStaticProps } from 'next';
 
 interface Props {
   post: ArticleDTO | null;
