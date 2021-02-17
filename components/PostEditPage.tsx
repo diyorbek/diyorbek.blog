@@ -88,7 +88,7 @@ export default function PostEditPage({
                 setTitle(currentTarget.innerText);
               }}
             >
-              {title}
+              {post.title}
             </h1>
           </div>
 
