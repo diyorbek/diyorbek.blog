@@ -6,7 +6,6 @@ import { ArticleDTO, getArticle } from '../../database/Article';
 import { formatDate } from '../../utils/dateUtils';
 import NotFoundPage from '../404';
 import { connectDB } from '../../database/connect';
-import 'highlight.js';
 
 export default function BlogPost({ post }: { post: ArticleDTO | null }) {
   const content = useMemo(() => {
@@ -25,7 +24,6 @@ export default function BlogPost({ post }: { post: ArticleDTO | null }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css"
         />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js" />
       </Head>
 
       <PageContainer>
