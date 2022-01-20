@@ -49,7 +49,7 @@ export default function Resume() {
               <h3>Frontend Developer at PeriPlus AG</h3>
 
               <span className="italic text-gray-600 dark:text-gray-400">
-                December 2019 - September 2019
+                December 2018 - September 2019
               </span>
             </div>
 

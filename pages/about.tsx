@@ -22,19 +22,6 @@ export default function About() {
             person that's why I appreciate perfectionism and follow discipline.
           </p>
           <p className="mb-2">
-            I consider myself quite creative and I enjoy experimenting. That's
-            why I have a little "Lab" on my personal website. Where I try out
-            new things or just jam 🙂. <br />
-            Also, I am also passionate about UI design and building
-            inspirational user interface elements.
-          </p>
-          <p className="mb-2">
-            I am very interested in open-source software development. In order
-            to become a part of the community, I try to contribute to
-            open-source projects on GitHub either by opening an issue or sending
-            pull requests.
-          </p>
-          <p className="mb-2">
             I always try to help my peers by sharing my humble knowledge and
             experience. Because one can improve and reinforce their own
             knowledge by sharing.
