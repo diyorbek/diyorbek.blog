@@ -20,11 +20,10 @@ export default function ButtonLink({
             'text-lg',
             'text-center',
             'font-bold',
-            'font-medium',
-            'text-lightBlue-500',
-            'hover:text-lightBlue-500',
-            'dark:text-lightBlue-400',
-            'dark:hover:text-lightBlue-400',
+            'text-sky-500',
+            'hover:text-sky-500',
+            'dark:text-sky-400',
+            'dark:hover:text-sky-400',
             'focus:outline-none',
           ].join(' ') +
           ' ' +

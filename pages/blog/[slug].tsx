@@ -39,7 +39,9 @@ export default function BlogPost({ post }: Props) {
         <div className="max-w-2xl mx-auto mb-8 px-2">
           <div className="mb-8">
             <h1 className="mb-2">{post.title}</h1>
-            <span className="text-gray-400">{formatDate(post.createdAt)}</span>
+            <span className="text-gray-400">
+              {formatDate(post.publishDate)}
+            </span>
           </div>
 
           <div className="blog-content">{content}</div>

@@ -13,3 +13,4 @@ export function formatDate(date: string | Date) {
 
   return '';
 }
+``;

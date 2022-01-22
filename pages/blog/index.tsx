@@ -24,11 +24,11 @@ export default function Blog({ posts }: BlogProps) {
 
           <div className="article-list grid grid-cols-1 gap-2">
             {posts.length > 0 ? (
-              posts.map(({ _id, slug, title, contentPreview, createdAt }) => (
+              posts.map(({ _id, slug, title, contentPreview, publishDate }) => (
                 <Link href={`/blog/${slug}`} key={_id}>
-                  <a className="hover:no-underline text-gray-700 hover:text-lightBlue-600 dark:text-gray-200 dark:hover:text-lightBlue-400">
+                  <a className="hover:no-underline text-gray-700 hover:text-sky-600 dark:text-gray-200 dark:hover:text-sky-400">
                     <span className="text-gray-400">
-                      {formatDate(createdAt)}
+                      {formatDate(publishDate)}
                     </span>
 
                     <h3 className="mt-2">{title}</h3>

@@ -16,13 +16,19 @@ export default function PostEditPage({
   post,
   edit = false,
 }: PostEditPageProps) {
-  const [title, setTitle] = useState(post.title || 'Blogs Title');
+  const [title, setTitle] = useState(post.title);
+  const [publishDate, setPublishDate] = useState(
+    new Date().toISOString().split('T')[0]
+  );
   const [content, setContent] = useState(post.content || '');
   const [textContent, setTextContent] = useState(post.contentPreview || '');
   const [isListed, setIsListed] = useState(post.isListed ?? true);
   const [isPublishing, setIsPublishing] = useState(false);
 
   const publish = async () => {
+    if (!title) return Promise.reject('Empty title');
+    console.log(title);
+
     setIsPublishing(true);
 
     const body = {
@@ -32,7 +38,8 @@ export default function PostEditPage({
       contentPreview: textContent.substring(0, 150),
       isListed,
       tags: [],
-    } as Partial<ArticleDTO>;
+      publishDate,
+    } as Omit<ArticleDTO, '_id' | 'createdAt' | 'updatedAt'>;
 
     try {
       let response;
@@ -88,8 +95,19 @@ export default function PostEditPage({
                 setTitle(currentTarget.innerText);
               }}
             >
-              {post.title}
+              {post.title || 'Blog title'}
             </h1>
+          </div>
+
+          <div className="mb-8">
+            <label className="mr-2">Publish date</label>
+            <input
+              type="date"
+              value={publishDate}
+              onChange={({ target }) => {
+                if (target.valueAsDate) setPublishDate(target.value);
+              }}
+            />
           </div>
 
           <div className="mb-8">

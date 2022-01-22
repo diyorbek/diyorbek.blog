@@ -9,14 +9,14 @@
 }
 
 .header-container .menu-item {
-  @apply hover:no-underline text-gray-500 hover:text-lightBlue-500 font-semibold;
-  @apply dark:text-gray-300 dark:hover:text-lightBlue-400;
+  @apply hover:no-underline text-gray-500 hover:text-sky-500 font-semibold;
+  @apply dark:text-gray-300 dark:hover:text-sky-400;
   @apply text-lg;
 }
 
 .header-container .menu-item.active {
-  @apply hover:no-underline text-lightBlue-500 font-semibold pointer-events-none;
-  @apply dark:text-lightBlue-400;
+  @apply hover:no-underline text-sky-500 font-semibold pointer-events-none;
+  @apply dark:text-sky-400;
 }
 
 .menu-button {

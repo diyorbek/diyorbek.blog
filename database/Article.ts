@@ -7,8 +7,7 @@ interface Article {
   slug: string;
   tags: string[];
   isListed: boolean;
-  createdAt: string;
-  updatedAt: string;
+  publishDate: string;
 }
 
 export interface ArticleDTO extends Article {
@@ -17,42 +16,44 @@ export interface ArticleDTO extends Article {
 
 interface ArticleDocument extends Article, Document {}
 
-const ArticleSchema = new Schema(
-  {
-    title: {
-      type: String,
-      required: [true, 'Post should have a title'],
-      trim: true,
-      maxLength: [200, 'Title should be less than 200 characters'],
-    },
-    content: {
-      type: String,
-      required: [true, 'Post should have content'],
-      trim: true,
-    },
-    contentPreview: {
-      type: String,
-      maxLength: [150, 'Preview should be less than 150 characters'],
-      trim: true,
-    },
-    slug: {
-      type: String,
-      required: [true, 'Post should have a slug'],
-      trim: true,
-    },
-    tags: [
-      {
-        type: String,
-        trim: true,
-      },
-    ],
-    isListed: {
-      type: Boolean,
-      default: true,
-    },
+const ArticleSchema = new Schema({
+  title: {
+    type: String,
+    required: [true, 'Post should have a title'],
+    trim: true,
+    maxLength: [200, 'Title should be less than 200 characters'],
   },
-  { timestamps: { createdAt: true, updatedAt: true } }
-);
+  content: {
+    type: String,
+    required: [true, 'Post should have content'],
+    trim: true,
+  },
+  contentPreview: {
+    type: String,
+    maxLength: [150, 'Preview should be less than 150 characters'],
+    trim: true,
+  },
+  slug: {
+    type: String,
+    required: [true, 'Post should have a slug'],
+    trim: true,
+  },
+  tags: [
+    {
+      type: String,
+      trim: true,
+    },
+  ],
+  isListed: {
+    type: Boolean,
+    default: true,
+  },
+  publishDate: {
+    type: String,
+    required: [true, 'Publish date is required'],
+    trim: true,
+  },
+});
 
 const Article =
   (models.Article as Model<ArticleDocument>) ||
@@ -63,10 +64,10 @@ export async function getArticlesList() {
 
   return articles
     .filter(({ isListed }) => isListed)
-    .map(({ _id, slug, title, contentPreview, createdAt }) => ({
+    .map(({ _id, slug, title, contentPreview, publishDate }) => ({
       _id,
       contentPreview,
-      createdAt,
+      publishDate,
       slug,
       title,
     }));

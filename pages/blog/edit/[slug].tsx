@@ -1,4 +1,7 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import {
+  withPageAuthRequired,
+  WithPageAuthRequiredProps,
+} from '@auth0/nextjs-auth0';
 import PostEditPage from '../../../components/PostEditPage';
 import { ArticleDTO, getArticle } from '../../../database/Article';
 import { connectDB } from '../../../database/connect';
@@ -6,7 +9,7 @@ import NotFoundPage from '../../404';
 
 export default withPageAuthRequired(function EditBlogPost({
   post,
-}: {
+}: WithPageAuthRequiredProps & {
   post: ArticleDTO | null;
 }) {
   if (!post) {

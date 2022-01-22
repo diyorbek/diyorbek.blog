@@ -20,7 +20,7 @@ h4 {
 
 p,
 li {
-  @apply text-lg text-warmGray-600 dark:text-warmGray-300;
+  @apply text-lg text-stone-600 dark:text-stone-300;
 }
 
 p,
