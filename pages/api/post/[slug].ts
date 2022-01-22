@@ -16,7 +16,7 @@ export default withApiAuthRequired(
         } else {
           res.status(404).json({ error: 'Article not found' });
         }
-      } catch (error) {
+      } catch (error: any) {
         res.status(400).json({ error: error.message });
       }
     } else {

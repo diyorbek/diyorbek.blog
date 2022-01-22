@@ -44,9 +44,7 @@ export default function Blog({ posts }: BlogProps) {
                 </Link>
               ))
             ) : (
-              <h2 className="mt-24 text-warmGray-400 text-center">
-                No articles
-              </h2>
+              <h2 className="mt-24 text-stone-400 text-center">No articles</h2>
             )}
           </div>
         </div>

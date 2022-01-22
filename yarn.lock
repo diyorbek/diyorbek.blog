@@ -202,6 +202,13 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
+"@types/formidable@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@types/formidable/-/formidable-2.0.3.tgz#6f02143df42851155c4b4f22c84873288cef456e"
+  integrity sha512-u1dFrrhT2XrNzDJ+f/qwxxEU9cGTiQvItSaghiU+sQXX/XU+jsxCGrAuUR7BjkeHHB2P4pR4XUr52TGDNfzhRg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/http-cache-semantics@*":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.1.tgz#0ea7b61496902b95890dc4c3a116b60cb8dae812"
@@ -266,6 +273,11 @@
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
+"@types/uuid@^8.3.4":
+  version "8.3.4"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
+  integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
 
 "@types/webidl-conversions@*":
   version "6.1.1"

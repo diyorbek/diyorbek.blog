@@ -48,11 +48,11 @@ export default withApiAuthRequired(
   async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
       try {
-        const image = await parseFormImage(req);
+        const image = (await parseFormImage(req)) as File & { path: string };
         const { Location } = await uploadFile(createReadStream(image.path));
 
         res.status(200).json({ data: Location });
-      } catch (error) {
+      } catch (error: any) {
         res.status(400).json({ error: error.message });
       }
     } else {

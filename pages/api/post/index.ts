@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       const blogs = await getArticlesList();
 
       res.json({ data: blogs });
-    } catch (error) {
+    } catch (error: any) {
       res.status(400).json({ error: error.message });
     }
   } else {

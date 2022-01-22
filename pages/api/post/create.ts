@@ -14,7 +14,7 @@ export default withApiAuthRequired(
         const blog = await createArticle(req.body);
 
         res.status(201).json({ data: blog });
-      } catch (error) {
+      } catch (error: any) {
         res.status(400).json({ error: error.message });
       }
     } else {

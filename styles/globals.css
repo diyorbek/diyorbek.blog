@@ -29,11 +29,11 @@ html {
 }
 
 html.dark {
-  --dark-light-start: #404040; /* colors.trueGray 700 */
-  --dark-light-end: #262626; /* colors.trueGray 800 */
+  --dark-light-start: #404040; /* colors.neutral 700 */
+  --dark-light-end: #262626; /* colors.neutral 800 */
 
   --dark-light-reflection-color: #525252;
-  --dark-shadow-reflection-color: #262626; /* colors.trueGray 800 */
+  --dark-shadow-reflection-color: #262626; /* colors.neutral 800 */
 
   --light-start: var(--dark-light-start);
   --light-end: var(--dark-light-end);
