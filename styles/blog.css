@@ -59,3 +59,10 @@ pre {
 .blog-content iframe {
   margin: auto;
 }
+
+.ql-toolbar.ql-snow {
+  position: sticky;
+  top: 68px;
+  z-index: 2;
+  background: var(--convex-gradient);
+}
