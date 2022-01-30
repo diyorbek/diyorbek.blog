@@ -18,35 +18,35 @@ export default function Resume() {
 
             <div className="divider mb-2" />
 
-            <div className="flex justify-between flex-wrap mb-4">
-              <h3>Frontend Developer at Super Dispatch</h3>
+            <div className="flex justify-between flex-wrap">
+              <h3>Frontend Developer, Super Dispatch</h3>
 
               <span className="italic text-gray-600 dark:text-gray-400">
                 September 2019 - Present
               </span>
             </div>
 
-            <ul>
+            <ul className="mb-4">
               <li>
-                <p>
-                  Developed and maintained the web applications and email
-                  templates of the company. Technologies: ReactJS, Redux,
-                  TypeScript.
-                </p>
+                Developed web application for transportation management system
+                using ReactJS
               </li>
               <li>
-                <p>Migrated Django template pages to ReactJS</p>
+                Optimized WebSocket connections significantly in ReactJS
+                applications using Shared Workers.
               </li>
               <li>
-                <p>
-                  Building design system elements (based on Material UI) for the
-                  web applications of the company.
-                </p>
+                Reduced the crash rate by 30% by fixing the asset loading issue
+                in ReactJS applications.
+              </li>
+              <li>
+                Built the design system components for web applications on top
+                of Material-UI.
               </li>
             </ul>
 
-            <div className="flex justify-between flex-wrap mb-4">
-              <h3>Frontend Developer at PeriPlus AG</h3>
+            <div className="flex justify-between flex-wrap">
+              <h3>Frontend Developer, PeriPlus AG</h3>
 
               <span className="italic text-gray-600 dark:text-gray-400">
                 December 2018 - September 2019
@@ -55,22 +55,18 @@ export default function Resume() {
 
             <ul>
               <li>
-                <p>
-                  Built a mobile app in React Native for container number
-                  recognition.
-                </p>
+                Built React Native mobile application for container number
+                recognition.
               </li>
               <li>
-                <p>
-                  Built the frontend of transportation management system in
-                  ReactJS
-                </p>
+                Built the frontend of a transportation management system in
+                ReactJS.
               </li>
               <li>
-                <p>
-                  Built the frontend of a document recognition app in ReactJS
-                </p>
+                Built the frontend of document recognition and classification
+                application in ReactJS.
               </li>
+              <li>Wrote unit and end-to-end tests for SPAs.</li>
             </ul>
           </div>
 
@@ -87,13 +83,16 @@ export default function Resume() {
               </span>
             </div>
 
-            <div className="flex justify-between flex-wrap">
-              <h3>Tashkent University of Information Technologies</h3>
-
-              <span className="italic text-gray-600 dark:text-gray-400">
-                September 2017 - December 2018
-              </span>
-            </div>
+            <ul>
+              <li>
+                <b>Overall GPA:</b> 4.2/5.0
+              </li>
+              <li>
+                <b>Courses:</b> C++, Java, Algorithms and data structures,
+                Relational databases, Object-oriented programming, Calculus,
+                Linear Algebra and geometry, Discrete mathematics
+              </li>
+            </ul>
           </div>
 
           <div className="mb-10">
@@ -101,29 +100,69 @@ export default function Resume() {
 
             <div className="divider mb-2" />
 
-            <h3>Fonetika.Uz</h3>
-            <p>
-              <a target="_blank" rel="noreferrer" href="https://fonetika.uz/">
-                Fonetika.Uz
-              </a>{' '}
-              is a small web app for looking up for the syllablifications of
-              Uzbek words. Besides it shows the variants of work breaking for
-              the input word, and categories of the letters in the word.
-            </p>
-
-            <h3>MusicSpider</h3>
-            <p>
+            <h3>
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="http://bit.ly/musicspider"
+                href="https://transliterator.uz/"
               >
-                MusicSpider
-              </a>{' '}
-              is a chrome extension for listening to music while browsing.
-              Because the songs are constantly crawled by spiders, this name was
-              given.
-            </p>
+                Transliterator
+              </a>
+            </h3>
+
+            <ul className="mb-4">
+              <li>
+                Transliterator for Uzbek words with high accuracy (from Latin
+                alphabet to Cyrillic and vice versa).
+              </li>
+              <li>
+                Created enriched exceptional words list analyzing the spelling
+                dictionaries using Bash.
+              </li>
+              <li>
+                The web app is built using ReactJS, and the engine is built
+                using TypeScript.
+              </li>
+            </ul>
+
+            <h3>
+              <a target="_blank" rel="noreferrer" href="https://fonetika.uz/">
+                Fonetika
+              </a>
+            </h3>
+
+            <ul className="mb-4">
+              <li>
+                Divides Uzbek words into syllables. Built using TypeScript.
+              </li>
+              <li>Shows phonetic and orthographic aspects of a given word.</li>
+              <li>
+                The algorithm correctly syllabizes the words with bigrams which
+                are exceptions in grammar textbooks.
+              </li>
+            </ul>
+
+            <h3>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/diyorbek/socoban"
+              >
+                Socoban
+              </a>
+            </h3>
+
+            <ul className="mb-4">
+              <li>
+                A classic 2D game in which the player moves boxes around to
+                place them in a particular position.
+              </li>
+              <li>
+                The levels are added as text files that contain a time limit and
+                target positions as a character matrix.
+              </li>
+              <li>Written in Java using JavaFX.</li>
+            </ul>
           </div>
         </div>
       </PageContainer>
