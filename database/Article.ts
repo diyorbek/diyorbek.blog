@@ -60,7 +60,7 @@ const Article =
   model<ArticleDocument>('Article', ArticleSchema);
 
 export async function getArticlesList() {
-  const articles = await Article.find({}).sort({ createdAt: 'desc' }).lean();
+  const articles = await Article.find({}).sort({ publishDate: 'desc' }).lean();
 
   return articles
     .filter(({ isListed }) => isListed)
