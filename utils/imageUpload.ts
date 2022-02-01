@@ -123,7 +123,6 @@ class ImageUploader {
 
   readAndUploadFile(file: File) {
     let isUploadReject = false;
-
     const fileReader = new FileReader();
 
     fileReader.addEventListener(

@@ -36,8 +36,6 @@ function parseFormImage(req: NextApiRequest) {
       if (error) {
         reject(error);
       } else {
-        console.log(_fields);
-
         resolve(files.image as File);
       }
     });
@@ -48,8 +46,8 @@ export default withApiAuthRequired(
   async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
       try {
-        const image = (await parseFormImage(req)) as File & { path: string };
-        const { Location } = await uploadFile(createReadStream(image.path));
+        const image = await parseFormImage(req);
+        const { Location } = await uploadFile(createReadStream(image.filepath));
 
         res.status(200).json({ data: Location });
       } catch (error: any) {
