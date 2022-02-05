@@ -18,7 +18,7 @@ export default function PostEditPage({
 }: PostEditPageProps) {
   const [title, setTitle] = useState(post.title);
   const [publishDate, setPublishDate] = useState(
-    new Date().toISOString().split('T')[0]
+    post.publishDate || new Date().toISOString().split('T')[0]
   );
   const [content, setContent] = useState(post.content || '');
   const [textContent, setTextContent] = useState(post.contentPreview || '');
