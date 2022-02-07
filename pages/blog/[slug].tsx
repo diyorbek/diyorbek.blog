@@ -11,6 +11,7 @@ import { formatDate } from '../../utils/dateUtils';
 import NotFoundPage from '../404';
 import { connectDB } from '../../database/connect';
 import { GetStaticProps } from 'next';
+import { findImageURL } from '../../utils/findImageURL';
 
 interface Props {
   post: ArticleDTO | null;
@@ -20,10 +21,15 @@ export default function BlogPost({ post }: Props) {
   const content = useMemo(() => {
     return post ? ParseHTML(post.content) : '';
   }, [post?.content]);
+  const captionImageURL = useMemo(
+    () => post && findImageURL(post.content),
+    [post]
+  );
 
   if (!post) {
     return <NotFoundPage />;
   }
+  console.log(post);
 
   return (
     <>
@@ -33,6 +39,13 @@ export default function BlogPost({ post }: Props) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css"
         />
+        <meta property="og:site_name" content="Diyorbek's Blog" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.contentPreview + '...'} />
+
+        {captionImageURL && (
+          <meta property="og:image" content={captionImageURL} />
+        )}
       </Head>
 
       <PageContainer>
