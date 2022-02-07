@@ -26,6 +26,7 @@ html {
     var(--light-end),
     var(--light-start)
   );
+  background: var(--light-end);
 }
 
 html.dark {

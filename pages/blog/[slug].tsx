@@ -29,7 +29,6 @@ export default function BlogPost({ post }: Props) {
   if (!post) {
     return <NotFoundPage />;
   }
-  console.log(post);
 
   return (
     <>
