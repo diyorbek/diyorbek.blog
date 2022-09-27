@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import React from 'react';
-import { PageContainer } from '../components/PageContainer';
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+import { PageContainer } from "../components/PageContainer";
 
 export default function About() {
   return (
@@ -17,9 +17,9 @@ export default function About() {
           <p>Hello! My name is Diyorbek Sadullaev. For friends just Diyor.</p>
 
           <p>
-            I am a 23-year-old frontend developer who's in love with the whole
-            JavaScript ecosystem. Currently living and studying in Warsaw,
-            Poland.
+            I am a {new Date().getFullYear() - 1998}-year-old frontend developer
+            who's in love with the whole JavaScript ecosystem. Currently living
+            and studying in Warsaw, Poland.
           </p>
 
           <p>
@@ -30,9 +30,8 @@ export default function About() {
 
           <p>
             At the age of 18, I made the decision that I am always going to be
-            proud of myself for that: I decided to become a programmer. That was
-            a bold decision for a guy{' '}
-            <strong>who didn't even own a computer!</strong>
+            proud of doing so: I decided to become a programmer. That was a bold
+            decision for a guy <strong>who didn't even own a computer!</strong>
           </p>
 
           <p>
@@ -49,8 +48,9 @@ export default function About() {
 
           <p>
             I have skipped a lot of stories above because I am a bit lazy to
-            write them all. The quick recap of all you can find in my{' '}
-            <Link href="/cv">résumé</Link>. 😬
+            write them all. But if you are interested in my professional skills,
+            you can find them in my{" "}
+            <Link href="/Diyobek_Sadullaev_s_resume.pdf">résumé</Link>. 😬
           </p>
         </div>
       </PageContainer>
