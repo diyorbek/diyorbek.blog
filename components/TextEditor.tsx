@@ -14,7 +14,7 @@ const editoModules = {
     highlight: (text: string) => hljs.highlightAuto(text).value,
   },
   toolbar: [
-    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    [{ header: [1, 2, 3, 4, 5, 6, false], font: [] }],
     ['bold', 'italic', 'underline', 'strike'], // toggled buttons
     ['link', 'blockquote', 'image', 'video', 'code-block', 'clean'],
 
