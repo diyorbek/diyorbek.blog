@@ -1,7 +1,6 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react';
 import { PageContainer } from '../../components/PageContainer';
 import { ArticleDTO, getArticlesList } from '../../database/Article';
 import { connectDB } from '../../database/connect';
@@ -21,6 +20,15 @@ export default function Blog({ posts }: BlogProps) {
       <PageContainer>
         <div className="max-w-2xl mx-auto mb-8 px-2">
           <h1 className="text-center">Recent Blogs</h1>
+
+          <blockquote>
+            <i>
+              My blog posts are written in Uzbek. There are a lot information
+              available in English on the internet. My motivation is to generate
+              more content in my native language so it can benefit Uzbek
+              audience.
+            </i>
+          </blockquote>
 
           <div className="article-list grid grid-cols-1 gap-2">
             {posts.length > 0 ? (

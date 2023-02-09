@@ -1,13 +1,14 @@
-import Head from "next/head";
-import React from "react";
-import Avatar from "../components/Avatar";
-import ButtonLink from "../components/ButtonLink";
-import { GitHub } from "../components/icons/GitHub";
-import { LinkedIn } from "../components/icons/LinkedIn";
-import { StackOverflow } from "../components/icons/StackOverflow";
-import { Telegram } from "../components/icons/Telegram";
-import { PageContainer } from "../components/PageContainer";
-import { PageHeader } from "../components/PageHeader";
+import Head from 'next/head';
+import React from 'react';
+import Avatar from '../components/Avatar';
+import ButtonLink from '../components/ButtonLink';
+import { GitHub } from '../components/icons/GitHub';
+import { LinkedIn } from '../components/icons/LinkedIn';
+import { StackOverflow } from '../components/icons/StackOverflow';
+import { Telegram } from '../components/icons/Telegram';
+import { YoutTube } from '../components/icons/YoutTube';
+import { PageContainer } from '../components/PageContainer';
+import { PageHeader } from '../components/PageHeader';
 
 export default function Home() {
   return (
@@ -48,14 +49,21 @@ export default function Home() {
               href="https://github.com/Diyorbek"
               target="_blank"
             >
-              <GitHub className="text-2xl " />
+              <GitHub className="text-2xl" />
             </a>
             <a
               className="outline-none px-2 focus:text-blue-400 hover:text-blue-400 text-gray-600 dark:text-gray-400 dark:hover:text-blue-400 dark:focus:text-blue-400"
               href="https://t.me/brogrammist"
               target="_blank"
             >
-              <Telegram className="text-2xl " />
+              <Telegram className="text-2xl" />
+            </a>
+            <a
+              className="outline-none px-2 focus:text-red-600 hover:text-red-600 text-gray-600 dark:text-gray-400 dark:hover:text-red-600 dark:focus:text-red-600"
+              href="https://www.youtube.com/@brogrammistuz"
+              target="_blank"
+            >
+              <YoutTube className="text-2xl" />
             </a>
             <a
               className="outline-none px-2 text-gray-600 dark:text-gray-400"
