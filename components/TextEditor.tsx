@@ -1,10 +1,10 @@
-import 'react-quill/dist/quill.snow.css';
-import 'react-quill/dist/quill.bubble.css';
-import ReactQuill from 'react-quill';
-import Quill from 'quill';
-import ImageUploader, { saveToServer } from '../utils/imageUpload';
 import hljs from 'highlight.js';
+import Quill from 'quill';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.bubble.css';
+import 'react-quill/dist/quill.snow.css';
 import { CodeBlot } from '../utils/codeBlot';
+import ImageUploader, { saveToServer } from '../utils/imageUpload';
 
 Quill.register(CodeBlot);
 Quill.register('modules/imageUploader', ImageUploader);
@@ -16,7 +16,7 @@ const editoModules = {
   toolbar: [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ['bold', 'italic', 'underline', 'strike'], // toggled buttons
-    ['blockquote', 'image', 'video', 'code-block', 'clean'],
+    ['link', 'blockquote', 'image', 'video', 'code-block', 'clean'],
 
     [{ list: 'ordered' }, { list: 'bullet' }],
     [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
