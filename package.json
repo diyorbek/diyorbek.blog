@@ -5,6 +5,10 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
   "dependencies": {
     "@auth0/nextjs-auth0": "1.7.0",
     "aws-sdk": "2.1062.0",
