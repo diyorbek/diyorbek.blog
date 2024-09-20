@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { HTMLAttributes, useEffect, useRef } from 'react';
+import { HTMLAttributes, useEffect, useRef } from 'react';
 import { Close } from './icons/Close';
 import { HalfMoon } from './icons/HalfMoon';
 import { Menu } from './icons/Menu';
@@ -94,6 +94,15 @@ export function PageHeader({
             }`,
           }}
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-9MFTP0KEYW"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-9MFTP0KEYW');`,
+          }}
+        ></script>
       </Head>
 
       <div
