@@ -74,16 +74,13 @@ svg {
 }
 
 ul {
-  padding-left: 24px;
+  padding-left: 44px;
+  list-style-type: square;
 }
 
 ol {
-  padding-left: 24px;
-  list-style: decimal !important;
-}
-
-ul li {
-  list-style: square;
+  padding-left: 44px;
+  list-style-type: decimal !important;
 }
 
 a {

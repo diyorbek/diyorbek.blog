@@ -1,17 +1,17 @@
+import ParseHTML from 'html-react-parser';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useMemo } from 'react';
 import { PageContainer } from '../../components/PageContainer';
-import ParseHTML from 'html-react-parser';
 import {
   ArticleDTO,
   getArticle,
   getArticlesList,
 } from '../../database/Article';
-import { formatDate } from '../../utils/dateUtils';
-import NotFoundPage from '../404';
 import { connectDB } from '../../database/connect';
-import { GetStaticProps } from 'next';
+import { formatDate } from '../../utils/dateUtils';
 import { findImageURL } from '../../utils/findImageURL';
+import NotFoundPage from '../404';
 
 interface Props {
   post: ArticleDTO | null;
@@ -49,7 +49,7 @@ export default function BlogPost({ post }: Props) {
 
       <PageContainer>
         <div className="max-w-2xl mx-auto mb-8 px-2">
-          <div className="mb-8">
+          <div className="mb-6">
             <h1 className="mb-2">{post.title}</h1>
             <span className="text-gray-400">
               {formatDate(post.publishDate)}

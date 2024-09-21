@@ -1,21 +1,23 @@
+h1,
+h2,
+h3,
+h4 {
+  @apply my-4 font-bold;
+}
 h1 {
-  @apply text-3xl font-bold;
-  @apply mt-8 mb-6;
+  @apply text-3xl;
 }
 
 h2 {
-  @apply text-2xl font-bold;
-  @apply mb-4;
+  @apply text-2xl;
 }
 
 h3 {
-  @apply text-xl font-bold;
-  @apply mb-2;
+  @apply text-xl;
 }
 
 h4 {
-  @apply text-lg font-bold;
-  @apply mb-2;
+  @apply text-lg;
 }
 
 p,
@@ -24,10 +26,23 @@ li {
 }
 
 p,
-code,
+ul,
+ol,
 pre,
 blockquote {
-  @apply mb-6;
+  @apply my-4;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  @apply my-2;
+  padding-left: 32px;
+}
+
+blockquote {
+  @apply italic p-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-stone-700;
 }
 
 b,
@@ -35,8 +50,11 @@ strong {
   @apply text-black dark:text-white;
 }
 
-code,
-pre {
+code {
+  @apply bg-white dark:bg-stone-800;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 0.2rem 0.4rem;
 }
 
 .ql-editor {
