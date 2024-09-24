@@ -14,6 +14,8 @@ export interface ArticleDTO extends Article {
   _id: string;
 }
 
+export type ListArticleDTO = Omit<ArticleDTO, 'content' | 'isListed'>;
+
 interface ArticleDocument extends Article, Document {}
 
 const ArticleSchema = new Schema({
@@ -59,17 +61,18 @@ const Article =
   (models.Article as Model<ArticleDocument>) ||
   model<ArticleDocument>('Article', ArticleSchema);
 
-export async function getArticlesList() {
+export async function getArticlesList(): Promise<ListArticleDTO[]> {
   const articles = await Article.find({}).sort({ publishDate: 'desc' }).lean();
 
   return articles
     .filter(({ isListed }) => isListed)
-    .map(({ _id, slug, title, contentPreview, publishDate }) => ({
+    .map(({ _id, slug, title, contentPreview, publishDate, tags }) => ({
       _id,
       contentPreview,
       publishDate,
       slug,
       title,
+      tags,
     }));
 }
 

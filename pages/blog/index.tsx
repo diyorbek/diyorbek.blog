@@ -2,12 +2,13 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { PageContainer } from '../../components/PageContainer';
-import { ArticleDTO, getArticlesList } from '../../database/Article';
+import { getArticlesList, ListArticleDTO } from '../../database/Article';
 import { connectDB } from '../../database/connect';
 import { formatDate } from '../../utils/dateUtils';
+import { getMarkdownArticles } from '../../utils/getMarkdownArticles';
 
 interface BlogProps {
-  posts: ArticleDTO[];
+  posts: ListArticleDTO[];
 }
 
 export default function Blog({ posts }: BlogProps) {
@@ -64,11 +65,14 @@ export default function Blog({ posts }: BlogProps) {
 export const getStaticProps: GetStaticProps<BlogProps, any> = async (ctx) => {
   await connectDB();
   const articles = await getArticlesList();
+  const files = await getMarkdownArticles();
+  const posts = files
+    .concat(JSON.parse(JSON.stringify(articles)))
+    // @ts-ignore
+    .toSorted((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
   return {
     revalidate: 1,
-    props: {
-      posts: JSON.parse(JSON.stringify(articles)),
-    },
+    props: { posts },
   };
 };

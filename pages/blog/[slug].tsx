@@ -1,8 +1,10 @@
 import ParseHTML from 'html-react-parser';
+import Markdown from 'markdown-to-jsx';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useMemo } from 'react';
 import { PageContainer } from '../../components/PageContainer';
+import { SyntaxHighlightedCode } from '../../components/SyntaxHighlightedCode';
 import {
   ArticleDTO,
   getArticle,
@@ -11,16 +13,24 @@ import {
 import { connectDB } from '../../database/connect';
 import { formatDate } from '../../utils/dateUtils';
 import { findImageURL } from '../../utils/findImageURL';
+import {
+  getMarkdownArticle,
+  getMarkdownArticleFiles,
+  getMarkdownArticles,
+} from '../../utils/getMarkdownArticles';
 import NotFoundPage from '../404';
 
 interface Props {
   post: ArticleDTO | null;
+  isMarkdown?: boolean;
 }
 
-export default function BlogPost({ post }: Props) {
-  const content = useMemo(() => {
-    return post ? ParseHTML(post.content) : '';
-  }, [post?.content]);
+export default function BlogPost({ post, isMarkdown }: Props) {
+  const content = useMemo(
+    () => (post && !isMarkdown ? ParseHTML(post.content) : ''),
+    [post?.content, isMarkdown]
+  );
+
   const captionImageURL = useMemo(
     () => post && findImageURL(post.content),
     [post]
@@ -56,7 +66,21 @@ export default function BlogPost({ post }: Props) {
             </span>
           </div>
 
-          <div className="blog-content">{content}</div>
+          <div className="blog-content">
+            {isMarkdown ? (
+              <Markdown
+                options={{
+                  overrides: {
+                    pre: SyntaxHighlightedCode,
+                  },
+                }}
+              >
+                {post.content}
+              </Markdown>
+            ) : (
+              content
+            )}
+          </div>
         </div>
       </PageContainer>
     </>
@@ -66,8 +90,9 @@ export default function BlogPost({ post }: Props) {
 export async function getStaticPaths() {
   await connectDB();
   const articles = await getArticlesList();
+  const markdownArticles = await getMarkdownArticles({ listedOnly: false });
 
-  const paths = articles.map(({ slug }) => ({
+  const paths = articles.concat(markdownArticles).map(({ slug }) => ({
     params: { slug },
   }));
 
@@ -75,6 +100,17 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps<Props, any> = async (ctx) => {
+  const markdownArticles = await getMarkdownArticleFiles();
+
+  if (markdownArticles.includes(ctx.params.slug + '.md'))
+    return {
+      revalidate: 1,
+      props: {
+        post: await getMarkdownArticle(ctx.params.slug + '.md'),
+        isMarkdown: true,
+      },
+    };
+
   await connectDB();
   const article = await getArticle(ctx.params.slug);
 
