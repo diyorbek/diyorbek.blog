@@ -12,7 +12,15 @@ Kecha "customer support"dan xabar kelyapti. Foydalanuvchi **"12.05.1990"** sanas
 
 Xatolik chiqishi mumkin bo'lgan har bitta nuqtani sinchiklab tekshirib chiqdim. Komponentdan tortib, ishlatilgan kutubxonalargacha. Testlar ham ishlayapti.
 
-Yoshni tekshirishdagi **`new Date().getFullYear()`** dan boshqa barcha nuqtalarni test qilib chiqdim. Chunki eng boshidan **`new Date()`** pand beryotganiga ishongim kelmayotgandi.
+Yoshni tekshirishdagi **`new Date().getFullYear()`** dan boshqa barcha nuqtalarni test qilib chiqdim. Chunki eng boshidan **`new Date()`** pand beryotganiga ishongim kelmayotgandi. Yoshni hisoblaydigan kod taxminan shunday ishlaydi(aynan shunday emas!):
+
+```js
+const userAge = new Date().getFullYear() - new Date(user.birthDate).getFullYear();
+
+if (userAge < 18)
+  throw new Error('Not old enough!');
+
+```
 
 So'ng noiloj, "support"dagilarga foydalanuvchi kompyuteridagi sistema sanasini tekshirib ko'rishi kerakligini aytdim. Lekin ich-ichimdan o'zimni xatolikni topolmay jinnicha bahona qilganday his qildim.
 
