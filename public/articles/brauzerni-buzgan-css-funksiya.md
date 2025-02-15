@@ -127,8 +127,7 @@ O‘sha kuni bildimki, iOSda ishlaydigan barcha brauzerlar mobil Safarining “r
 
 iOS xavfsizlik nuqtayi nazaridan boshqa brauzerlarni ham Safari “engine”ini ishlatishga majburlar ekan.
 
-Lekin bu 2024-yil boshida o‘zgardi va hozirda Chrome iOSda o‘zining Blink “engine”ini ishlatadi. Manba: https://www.theverge.com/2024/1/25/24050478/apple-ios-17-4-browser-engines-eu
-
+Lekin bu 2024-yil boshida o‘zgardi va hozirda Chrome iOSda o‘zining Blink “engine”ini ishlatadi. [Manba.](https://www.theverge.com/2024/1/25/24050478/apple-ios-17-4-browser-engines-eu)
 ## Safari Webkit hozir xatolikni “patch” qilgan
 
 Agar bugni hozir qayta “reproduce” qilmoqchi bo‘lsangiz o‘xshamaydi. Chunki taxminan 5-6 oylar o‘tib buning iloji bo‘lmay qoldi. Tushundimki, tuzatishgan.
@@ -143,6 +142,5 @@ Shu bugni topganimda brauzerlar ham judaaa ishonchli emasligini, ular ham bir da
 
 Maqolani hujjat sifatida qoldirish uchun bugni to‘g‘rilash uchun jo‘natgan PR ga va “reproduce” qiluvchi Github Gist ga link qoldiraman:
 
-PR: https://github.com/pinterest/gestalt/pull/3202
-
-Github Gist: https://gist.github.com/diyorbek/945189e3036552d2de34ae955a1605ee
+- [GitHub PR](https://github.com/pinterest/gestalt/pull/3202)
+- [Github Gist](https://gist.github.com/diyorbek/945189e3036552d2de34ae955a1605ee)
