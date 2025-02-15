@@ -117,7 +117,7 @@ Bu kod `base.css` da joylashgan va aynan shu kod Pinterest vebsaytining video pl
 
 Xatolikni tuzatish esa juda sodda - shunchaki `rotateY(180deg)` ni ishlatmaslik kerak.
 
-Chunki, muammo faqat `rotateY()` funksiyasida ekan. `rotate3d`, `rotateX`, `rotateX` va boshqa “aylantirish” funksiyalarda bug kuzatilmadi.
+Chunki, muammo faqat `rotateY()` funksiyasida ekan. `rotate3d`, `rotateX`, `rotateZ` va boshqa “aylantirish” funksiyalarda bug kuzatilmadi.
 
 `rotateY(180deg)` o‘rniga `scale(-1, 1)` ni ishlatish ham mumkin. Shuni ishlatib qo‘yaverdim!
 
