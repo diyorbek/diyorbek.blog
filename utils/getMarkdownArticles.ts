@@ -4,6 +4,10 @@ import { marked } from 'marked';
 import path from 'path';
 import { ArticleDTO, ListArticleDTO } from '../database/Article';
 
+function correctImageLinks(content: string) {
+  return content.replaceAll(/\]\(\/public\/images\//g, '](/images/');
+}
+
 export async function getMarkdownArticleFiles(): Promise<string[]> {
   const dirPath = path.join(process.cwd(), 'public/articles');
   const files = await readdir(dirPath);
@@ -22,7 +26,7 @@ export async function getMarkdownArticle(
   return {
     _id: slug,
     slug,
-    content,
+    content: correctImageLinks(content),
     ...readMetadata(content),
   };
 }
