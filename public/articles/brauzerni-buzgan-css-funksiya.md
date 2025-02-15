@@ -17,14 +17,14 @@ Men Pinterest dizayn sistemasi - Gestalt kutubxonasi ustida ishlaganim uchun, ko
 
 LTR va RTL video komponentni solishtirib ko'rishingiz mumkin:
 
-![LTR-video](images/ltr-video.png) ![RTL-video](images/rtl-video.png)
+![LTR-video](/public/images/ltr-video.png) ![RTL-video](/public/images/rtl-video.png)
 
 
 Ko’rib turganingizdek, RTL da nafaqat yozuv balki boshqa UI elementlari ham “akslantirilishi” kerak. **Albatta, istisnolarni hisobga olgan holda.** Bu yerda xatto video progres paneli ham o’ngdan chapga harakatlanadi. Ikonkalar esa 180 gradus teskari o’girilgan.
 
 Shunday keyin, yana bir bug haqida vazifa kelib tushdi. Pinterest vebsaytining mobile versiayasida video kontrollerlari yo’qolib qolyotgan ekan.
 
-![RTL-video-buf](images/rtl-video-bug.gif)
+![RTL-video-buf](/public/images/rtl-video-bug.gif)
 
 Bazida video umuman qotib qolyotgan emish. Boshida bu `z-index` yoki `position: absolute` tufayli bo’lyotgan odatiy xatolikdek tuyuldi. Chunki Video komponenti bu HTML video elementi va uning ustidan ko’rsatiladigan kontrollerlardan iborat edi. Tahminan shunday:
 
@@ -50,7 +50,7 @@ Xullas, Pinterest vebsayti kodidan tortib, Gestalt kutubxonamizning kodlarigacha
 
 Asl muammoni topolmagach, simptopmlar bilan kurashishga o’tdim. Eng birinchi ish bu bugni izolyatsiya qilishdir. Shuning uchun top-toza HTML sahifa yaratib unda oddiy HTML va CSSda Video komponentning prototipini yasadim.
 
-![RTL-video-buf](images/video-svg-bug.gif)
+![RTL-video-buf](/public/images/video-svg-bug.gif)
 
 Bug hali ham mavjud. Bildimki, muammo CSS da!
 
