@@ -30,9 +30,9 @@ Bazida video umuman qotib qolyotgan emish. Boshida bu `z-index` yoki `position: 
 
 ```jsx
 <div style="position: relative;">
-	<video src="..." />
+  <video src="..." />
 	
-	<Controls style="position: absolute;" />
+  <Controls style="position: absolute;" />
 </div>
 ```
 
@@ -60,10 +60,10 @@ Ishonasizmi, hech qanday `z-index` bilan ham Video elementini kontrollerdan past
 
 ```diff
  <div style="position: relative;">
-  	<video src="...">
+   <video src="...">
 	
--	  <Controls style="position: absolute;" />
-+	  <Controls style="position: absolute; z-index: 0" />
+-  <Controls style="position: absolute;" />
++  <Controls style="position: absolute; z-index: 0" />
   </div>
 ```
 
@@ -75,9 +75,8 @@ Yana bir jinnicha “workaround” bu sahifaga mana buni qo’shish:
 + <div style="padding: 1%">
  
   <div style="position: relative;">
-  	<video src="...">
-	
-	  <Controls style="position: absolute;" />
+    <video src="...">
+    <Controls style="position: absolute;" />
   </div>
 ```
 
