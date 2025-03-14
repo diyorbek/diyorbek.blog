@@ -6,6 +6,8 @@ tags: professional
 isListed: true
 ---
 
+![Google-Waymo](/public/images/google-waymo.png)
+
 Google/Alphabet’ning o’zi yurar avtomobillar ustida ishlovchi Waymo nomli kompaniyasi bor. Yanvar oyi boshlarida menga LinkedIn’dan rekruter aloqaga chiqib, Waymo’ga ishga topshirib ko’rishni taklif qildi. Boshida shunchaki rad javobini bermoqchi edim. Chunki ochiq vakansiya **“C++ Backend” roli uchun** edi! Men esa frontendchi! 😬
 
 *(Balki hozir Pinterest kompaniyasida seńior dasturchiligim ko’zga tashlangandir?*)
