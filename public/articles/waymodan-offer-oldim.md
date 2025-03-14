@@ -36,7 +36,7 @@ Hali “offer” olganimni aytishmasdan, “team matching” ya’ni ma’lum ja
 
 Mart oyi keldi. Rekruter bilan bo’lgan keyingi qo’ng’iroqlarimizda kompensatsiya ya’ni oylik masalasini gaplashishni boshladik. Ular taklif qilgan ilk summa hozir Pinterest’da olayotgan summadan kamroq lekin juda yaqin edi. Frontend sohasidan boshqa sohaga o’tayotganim uchun savdolashishni o’rinli deb bilmadim. Garchi bu noto’g’ri fikr bo’lsa-da.
 
-Rekruterga aytilgan summa bo’laverishi aytganimda, “yo’q, man o’zim ko’proq so’rab beraman” dedi. Va hozirgi maoshimdan sal ko’proq summagacha chiqarib berdi! 😄
+Rekruterga aytilgan summa bo’laverishi aytganimda, “yo’q, man o’zim ko’proq so’rab beraman” dedi. Va hozirgi maoshimdan ko’proq summagacha chiqarib berdi! 😄
 
 Shundan so’ng meni suhbatlardan muvaffaqiyatli o’tganim bilan tabriklab, “offer” e-mailni jo’natishini aytdi. Men ham bundan juda xursand ekanimni aytdim.
 
