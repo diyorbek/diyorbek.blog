@@ -10,7 +10,7 @@ isListed: true
 
 Bir maqolaga ko’zim tushdi. Sarlavhasi shunday:
 
-["JavaScript “interpreted language” emas.](https://medium.com/@bmpmuhabbatpulatova98/javascript-interpreted-language-emas-87e00496a679)
+[JavaScript “interpreted language” emas.](https://medium.com/@bmpmuhabbatpulatova98/javascript-interpreted-language-emas-87e00496a679)
 
 Bu da’vo aksariyat hollarda to’g’ri. Ammo 100% haqiqat emas. Ushbu maqolada uning sabablarini keltirib o’tmoqchiman.
 
