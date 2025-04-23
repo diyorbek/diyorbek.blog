@@ -12,7 +12,7 @@ Bir maqolaga ko’zim tushdi. Sarlavhasi shunday:
 
 ["JavaScript “interpreted language” emas.](https://medium.com/@bmpmuhabbatpulatova98/javascript-interpreted-language-emas-87e00496a679)
 
-Bu da'vo aksariyat hollarda to’g’ri. Ammo 100% haqiqat emas. Ushbu maqolada uning sabablarini keltirib o’tmoqchiman.
+Bu da’vo aksariyat hollarda to’g’ri. Ammo 100% haqiqat emas. Ushbu maqolada uning sabablarini keltirib o’tmoqchiman.
 
 > Disclaimer: Davom etishdan oldin yuqorida keltirilgan maqolani o’qib chiqishni tavsiya qilaman. Chunki bu maqola o’sha maqolaga qo’shimcha sifatida yozilgan!
 
