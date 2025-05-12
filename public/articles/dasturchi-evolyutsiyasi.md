@@ -168,4 +168,4 @@ o‘zingizdan!
 
 ---
 
-["The Evolution of a Software Engineer"](https://medium.com/@webseanhickey/the-evolution-of-a-software-engineer-db854689243) maqolasidan ilhomlanib yozildi.
+"[The Evolution of a Software Engineer](https://medium.com/@webseanhickey/the-evolution-of-a-software-engineer-db854689243)" maqolasidan ilhomlanib yozildi.
