@@ -2,6 +2,7 @@
 layout: post
 publishDate: May 12, 2025
 title: Dasturchi evolyutsiyasi
+description: Har bir dasturchi bosib o'tadigan yo'l haqida qisqacha maqola.
 tags: js, career
 isListed: true
 ---
@@ -166,6 +167,8 @@ console.log('Hello World!');
 
 o‘zingizdan!
 
----
+<br/>
+<br/>
+<br/>
 
-"[The Evolution of a Software Engineer](https://medium.com/@webseanhickey/the-evolution-of-a-software-engineer-db854689243)" maqolasidan ilhomlanib yozildi.
+_"[The Evolution of a Software Engineer](https://medium.com/@webseanhickey/the-evolution-of-a-software-engineer-db854689243)" maqolasidan ilhomlanib yozildi._

@@ -49,15 +49,22 @@ export async function getMarkdownArticles(
 
 type MarkdownMetadata = Pick<
   ArticleDTO,
-  'title' | 'publishDate' | 'tags' | 'isListed' | 'contentPreview'
+  | 'title'
+  | 'publishDate'
+  | 'tags'
+  | 'isListed'
+  | 'contentPreview'
+  | 'description'
 >;
 
 function readMetadata(markdownContent: string): MarkdownMetadata {
   const { data, content } = matter(markdownContent);
-  const contentPreview = marked
-    .parse(content, { async: false })
-    .replace(/<[^>]+>/g, '')
-    .substring(0, 150);
+  const contentPreview =
+    data.description ||
+    marked
+      .parse(content, { async: false })
+      .replace(/<[^>]+>/g, '')
+      .substring(0, 150);
 
   return {
     ...data,

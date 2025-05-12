@@ -8,6 +8,7 @@ interface Article {
   tags: string[];
   isListed: boolean;
   publishDate: string;
+  description?: string;
 }
 
 export interface ArticleDTO extends Article {
