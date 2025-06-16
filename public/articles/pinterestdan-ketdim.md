@@ -59,3 +59,7 @@ va hokazo.
 To’g’risi, hamma o’rganganlarim va ikir-chikirigacha yozishga erinyapman.
 
 Bilingki, bundan katta kompaniya va loyihalarda ishlash, juda o’zgacha tajriba beradi. Kengroq va chuqurroq fikrlash shakllanadi. Jamoa bilan ishlashda professionallik kuchayadi. Har holda o’zimda sezgan yaxshilanishlar shular bo’ldi.
+
+> P.S.
+> _Hozirda hech qayerda ishlamayapman. Orada Waymo va Dropbox kompaniyslaridan offer oldim lekin yana shu viza sabsblariga ko'ra ularni rad etdim.
+> <br> <br> O'zim uchun biroz muddatga karyera pauzasi oldim. Ungacha 42.uz va boshqa shaxsiy loyihalarim ustida ishlayman._
