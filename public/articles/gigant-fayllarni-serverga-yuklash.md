@@ -53,27 +53,27 @@ To’plam deganda biz shunchaki parallel yuklanadigan 6 ta bo’lakni nazarda tu
 
 Har bir bo’lakni yuklovchi so’rovnomada qo’shimcha ma’lumotlar ham jo’natiladi. Dropbox so’rovnomalarida **`Dropbox-Api-Arg`** degan “header” bor. Unda ushbu ma’lumotlar **frontend tomondan serverga** jo’natilar ekan:
 
-```jsx
+```json
 {
-   "cursor": {
-      "session_id": "pid_upload_session:AFAJbemr6tyb3qH7HB1EjoM7qY3egdYGWZC_NUhM6FvXBMBsgg",
-      "offset": 0
-   },
-   "close": false,
-   "content_hash": "27c4339a9f6e9232b719890e72e993308dd0e4a1ba2654aa850fd281dba06c20"
+  "cursor": {
+    "session_id": "pid_upload_session:AFAJbe...",
+    "offset": 0
+  },
+  "close": false,
+  "content_hash": "27c4339a9f6e9232b719890e72e99330"
 }
 ```
 
 Shu yerda `cursor.offset` qiymatiga e’tibor bering. Endi quyidagi bo’lakdagi `cursor.offset` ga e’tibor bering:
 
-```jsx
+```json
 {
   "cursor": {
-    "session_id": "pid_upload_session:AFAJbemr6tyb3qH7HB1EjoM7qY3egdYGWZC_NUhM6FvXBMBsgg",
+    "session_id": "pid_upload_session:AFAJbe...",
     "offset": 16777216
   },
   "close": false,
-  "content_hash": "d2418c7280671a43a29c4b7925f99dfe49564f452359ba616a6842365be4c697"
+  "content_hash": "d2418c7280671a43a29c4b7925f99dfe"
 }
 ```
 
