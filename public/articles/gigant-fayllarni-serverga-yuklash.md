@@ -8,7 +8,7 @@ isListed: true
 
 ![sync-dropbox](/public/images/sync-dropbox.png)
 
-3 oycha oldin Dropbox kompaniyasida offer oldim. Mening dizayn sistemalari bo’yicha tajribam va texnik suhbatlardagi natijalarim ularga juda yoqib tushdi.
+3 oycha oldin Dropbox kompaniyasidan offer oldim. Mening dizayn sistemalari bo’yicha tajribam va texnik suhbatlardagi natijalarim ularga juda yoqib tushdi.
 
 Texnik suhbatlarning birida aynan fayl yuklanishi ustida ishlagan senior frontendchi bor edi. Suhbat oxirida undan katta fayllar qanday yuklanishi haqida so’radim. Chunki o’zim ham pet-proyektim uchun 100MB dan oshiq fayllar yuklanishini optimizatsiya qilish haqida bosh qotirib yurgandim.
 
