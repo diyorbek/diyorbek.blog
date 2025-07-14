@@ -31,7 +31,7 @@ Katta “chunk”larga bo’lish, masalan har bir bo’lakni 500MB qilish ham un
 ### Tarmoq
 
 1. So’rovnoma timeout berishi mumkin. Internet tezligi yaxshi bo’lmasa, 500MB ni yuklash aaaancha vaqt olishi mumkin.
-2. Brauzer, proksi, gateway, CDN, load balancer kabi klient va server o’rasida turuvchi vositalar limiti, timeout berishi, ularning “bandwidth”ini ham inobatga olish kerak.
+2. Brauzer, proksi, gateway, CDN, load balancer kabi klient va server orasida turuvchi vositalar limiti, timeout berishi, ularning “bandwidth”ini ham inobatga olish kerak.
 
 … xullas, bosh og’rig’i ko’p.
 
