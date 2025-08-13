@@ -21,7 +21,7 @@ div {
 }
 ```
 
-CSS uchun funksiya tushunchasi begona emas: calc(), rgb(), translate() kabilarni har doim ishlatib kelganmiz. Endi esa o'zimiz maxsus (custom) funksiyalar yozsak bo'lar ekan.
+CSS uchun funksiya tushunchasi begona emas: `calc()`, `rgb()`, `translate()` kabilarni har doim ishlatib kelganmiz. Endi esa o'zimiz maxsus (custom) funksiyalar yozsak bo'lar ekan.
 
 Maxsus funksiyalar o'ta dinamik o'zgaruvchilarga o'xshaydi - Parametrlarga asoslangan dinamik qiymat.
 Uning ichida har xil sharli ifodalar, xatto media-query'lar yozish mumkin. 😍
@@ -114,9 +114,9 @@ Bor ekan deb ishlatib ketaverish yaramaydi, albatta. Katta ehtimollik bilan bula
 2. Ko'p takrorlanuvchi, uzun, murakkab qoidalar to'plamini umumiylashtirish
 3. Dizayn sistemada shrift, spacing kabi xususiyarlar uchun. Aynan, ularning dinamikasini abstraktlashtirish
 4. Dinamik ranglarga asoslangan elementlarni stillash
-5. Kontekstga asoslangan @media, @supports, @container kabi query'lari bor stillar uchun.
+5. Kontekstga asoslangan `@media`, `@supports`, `@container` kabi query'lari bor stillar uchun.
 
-Aslida CSSning hozida mavjud imkoniyatlari bilan bular muammo emas. Maxsus funksiyalar va miksinlar beruvchi asosiy ustunlik bu - abstraksiya!
+Aslida CSSning hozida mavjud imkoniyatlari bilan bular muammo emas. Maxsus funksiyalar va miksinlar beruvchi asosiy ustunlik bu - **abstraksiya**!
 
 Undan tashqari, Sass, Less kabi preprotsessorlarda funksiyalar va miksinlar anchadan beri bor. Ammo CSS funksiya va miksinlar "cascade" asosiya ishlaydi, "copy&paste" asosida emas! Bu sayt yuklaydigan CSS hajmini kamaytiradi.
 
