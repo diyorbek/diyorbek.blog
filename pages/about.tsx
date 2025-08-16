@@ -1,7 +1,6 @@
-import Head from "next/head";
-import Link from "next/link";
-import React from "react";
-import { PageContainer } from "../components/PageContainer";
+import Head from 'next/head';
+import Link from 'next/link';
+import { PageContainer } from '../components/PageContainer';
 
 export default function About() {
   return (
@@ -18,14 +17,14 @@ export default function About() {
 
           <p>
             I am a {new Date().getFullYear() - 1998}-year-old frontend developer
-            who's in love with the whole JavaScript ecosystem. Currently living
-            and studying in Warsaw, Poland.
+            who's in love with software development.
           </p>
 
           <p>
-            I hate marketing/branding myself as I am a humble person. But here
-            we are, on my personal website's about page where I try to tell the
-            whole world how awesome I am. 💪
+            I hate marketing/branding myself as I am an extremely, sometimes
+            unecessarily, humble person. But here we are, on my personal
+            website's about page where I try to tell the whole world how awesome
+            I am. 💪
           </p>
 
           <p>
@@ -49,7 +48,7 @@ export default function About() {
           <p>
             I have skipped a lot of stories above because I am a bit lazy to
             write them all. But if you are interested in my professional skills,
-            you can find them in my{" "}
+            you can find them in my{' '}
             <Link href="/Diyobek_Sadullaev_s_resume.pdf">résumé</Link>. 😬
           </p>
         </div>
