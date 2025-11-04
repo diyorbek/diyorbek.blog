@@ -2,8 +2,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { PageContainer } from '../../components/PageContainer';
-import { getArticlesList, ListArticleDTO } from '../../database/Article';
-import { connectDB } from '../../database/connect';
+import { ListArticleDTO } from '../../database/Article';
 import { formatDate } from '../../utils/dateUtils';
 import { getMarkdownArticles } from '../../utils/getMarkdownArticles';
 
@@ -33,8 +32,8 @@ export default function Blog({ posts }: BlogProps) {
 
           <div className="article-list grid grid-cols-1 gap-2">
             {posts.length > 0 ? (
-              posts.map(({ _id, slug, title, contentPreview, publishDate }) => (
-                <Link href={`/blog/${slug}`} key={_id}>
+              posts.map(({ slug, title, contentPreview, publishDate }) => (
+                <Link href={`/blog/${slug}`} key={slug}>
                   <a className="hover:no-underline text-gray-700 hover:text-sky-600 dark:text-gray-200 dark:hover:text-sky-400">
                     <span className="text-gray-400">
                       {formatDate(publishDate)}
@@ -63,11 +62,8 @@ export default function Blog({ posts }: BlogProps) {
 }
 
 export const getStaticProps: GetStaticProps<BlogProps, any> = async (ctx) => {
-  await connectDB();
-  const articles = await getArticlesList();
   const files = await getMarkdownArticles();
   const posts = files
-    .concat(JSON.parse(JSON.stringify(articles)))
     // @ts-ignore
     .toSorted((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 

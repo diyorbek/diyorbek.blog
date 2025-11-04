@@ -24,7 +24,6 @@ export async function getMarkdownArticle(
   const slug = fileName.replace('.md', '');
 
   return {
-    _id: slug,
     slug,
     content: correctImageLinks(content),
     ...readMetadata(content),
@@ -64,6 +63,8 @@ function readMetadata(markdownContent: string): MarkdownMetadata {
     marked
       .parse(content, { async: false })
       .replace(/<[^>]+>/g, '')
+      .replace(/&#39;/g, "'")
+      .replace(/&quot;/g, '"')
       .substring(0, 150);
 
   return {

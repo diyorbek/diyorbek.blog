@@ -5,17 +5,11 @@ import Head from 'next/head';
 import { useMemo } from 'react';
 import { PageContainer } from '../../components/PageContainer';
 import { SyntaxHighlightedCode } from '../../components/SyntaxHighlightedCode';
-import {
-  ArticleDTO,
-  getArticle,
-  getArticlesList,
-} from '../../database/Article';
-import { connectDB } from '../../database/connect';
+import { ArticleDTO } from '../../database/Article';
 import { formatDate } from '../../utils/dateUtils';
 import { findImageURL } from '../../utils/findImageURL';
 import {
   getMarkdownArticle,
-  getMarkdownArticleFiles,
   getMarkdownArticles,
 } from '../../utils/getMarkdownArticles';
 import NotFoundPage from '../404';
@@ -88,36 +82,25 @@ export default function BlogPost({ post, isMarkdown }: Props) {
 }
 
 export async function getStaticPaths() {
-  await connectDB();
-  const articles = await getArticlesList();
+  // await connectDB();
+  // const articles = await getArticlesList();
   const markdownArticles = await getMarkdownArticles({ listedOnly: false });
 
-  const paths = articles.concat(markdownArticles).map(({ slug }) => ({
-    params: { slug },
-  }));
+  const paths =
+    // articles.concat
+    markdownArticles.map(({ slug }) => ({
+      params: { slug },
+    }));
 
   return { paths, fallback: true };
 }
 
 export const getStaticProps: GetStaticProps<Props, any> = async (ctx) => {
-  const markdownArticles = await getMarkdownArticleFiles();
-
-  if (markdownArticles.includes(ctx.params.slug + '.md'))
-    return {
-      revalidate: 1,
-      props: {
-        post: await getMarkdownArticle(ctx.params.slug + '.md'),
-        isMarkdown: true,
-      },
-    };
-
-  await connectDB();
-  const article = await getArticle(ctx.params.slug);
-
   return {
     revalidate: 1,
     props: {
-      post: JSON.parse(JSON.stringify(article)),
+      post: await getMarkdownArticle(ctx.params.slug + '.md'),
+      isMarkdown: true,
     },
   };
 };
