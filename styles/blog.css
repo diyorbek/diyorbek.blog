@@ -58,6 +58,12 @@ code {
   white-space: nowrap;
 }
 
+pre > code {
+  background: none;
+  padding: 0;
+  white-space: pre;
+}
+
 .ql-editor {
   @apply mb-8;
   /* padding: 0 0 !important; */

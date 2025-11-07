@@ -1,4 +1,3 @@
-import hljs from 'highlight.js';
 import { PropsWithChildren, useEffect, useRef } from 'react';
 
 export function SyntaxHighlightedCode(
@@ -7,13 +6,26 @@ export function SyntaxHighlightedCode(
   const ref = useRef<HTMLPreElement | null>(null);
 
   useEffect(() => {
-    if (ref.current && hljs) {
-      hljs.highlightElement(ref.current);
-    }
+    import('highlight.js').then((mod) => {
+      const hljs = mod.default;
+
+      if (ref.current && hljs) {
+        hljs.highlightElement(ref.current);
+      }
+    });
   }, [props.children]);
 
   return (
-    // @ts-ignore
-    <pre {...props} className={props.children?.props?.className} ref={ref} />
+    <pre
+      {...props}
+      // @ts-ignore
+      className={props.children?.props?.className}
+      ref={ref}
+      style={{
+        overflowX: 'auto',
+        maxWidth: 'calc(100vw - 40px)',
+        padding: '.5em',
+      }}
+    />
   );
 }

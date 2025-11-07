@@ -11,4 +11,4 @@ interface Article {
 
 export interface ArticleDTO extends Article {}
 
-export type ListArticleDTO = Omit<ArticleDTO, 'content' | 'isListed'>;
+export type ListArticleDTO = Omit<ArticleDTO, 'content'>;

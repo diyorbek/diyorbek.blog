@@ -1,4 +1,3 @@
-import ParseHTML from 'html-react-parser';
 import Markdown from 'markdown-to-jsx';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
@@ -12,7 +11,6 @@ import {
   getMarkdownArticle,
   getMarkdownArticles,
 } from '../../utils/getMarkdownArticles';
-import NotFoundPage from '../404';
 
 interface Props {
   post: ArticleDTO | null;
@@ -20,18 +18,14 @@ interface Props {
 }
 
 export default function BlogPost({ post, isMarkdown }: Props) {
-  const content = useMemo(
-    () => (post && !isMarkdown ? ParseHTML(post.content) : ''),
-    [post?.content, isMarkdown]
-  );
-
   const captionImageURL = useMemo(
     () => post && findImageURL(post.content),
     [post]
   );
 
   if (!post) {
-    return <NotFoundPage />;
+    if (typeof window !== 'undefined') window.location.replace('/404');
+    return null;
   }
 
   return (
@@ -61,19 +55,15 @@ export default function BlogPost({ post, isMarkdown }: Props) {
           </div>
 
           <div className="blog-content">
-            {isMarkdown ? (
-              <Markdown
-                options={{
-                  overrides: {
-                    pre: SyntaxHighlightedCode,
-                  },
-                }}
-              >
-                {post.content}
-              </Markdown>
-            ) : (
-              content
-            )}
+            <Markdown
+              options={{
+                overrides: {
+                  pre: SyntaxHighlightedCode,
+                },
+              }}
+            >
+              {post.content}
+            </Markdown>
           </div>
         </div>
       </PageContainer>
@@ -96,10 +86,12 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps<Props, any> = async (ctx) => {
+  const post = await getMarkdownArticle(ctx.params.slug + '.md');
+
   return {
     revalidate: 1,
     props: {
-      post: await getMarkdownArticle(ctx.params.slug + '.md'),
+      post,
       isMarkdown: true,
     },
   };

@@ -1,5 +1,5 @@
 export function findImageURL(content: string) {
-  const regexp = /https:\/\/myblogsbucket[^<>"]+/;
+  const regexp = /public\/images[^<>"]+/;
   const match = content.match(regexp);
 
   if (match) return match[0];

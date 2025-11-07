@@ -16,30 +16,34 @@ export async function getMarkdownArticleFiles(): Promise<string[]> {
 
 export async function getMarkdownArticle(
   fileName: string
-): Promise<ArticleDTO> {
-  const dirPath = path.join(process.cwd(), 'public/articles');
-  const content = await readFile(path.join(dirPath, fileName), {
-    encoding: 'utf-8',
-  });
-  const slug = fileName.replace('.md', '');
+): Promise<ArticleDTO | null> {
+  try {
+    const dirPath = path.join(process.cwd(), 'public/articles');
+    const content = await readFile(path.join(dirPath, fileName), {
+      encoding: 'utf-8',
+    });
+    const slug = fileName.replace('.md', '');
 
-  return {
-    slug,
-    content: correctImageLinks(content),
-    ...readMetadata(content),
-  };
+    return {
+      slug,
+      content: correctImageLinks(content),
+      ...readMetadata(content),
+    };
+  } catch (error) {
+    console.error(`Error reading markdown article ${fileName}:`, error);
+    return null;
+  }
 }
 
 export async function getMarkdownArticles(
   { listedOnly } = { listedOnly: true }
 ): Promise<ListArticleDTO[]> {
   const files = await getMarkdownArticleFiles();
-  const articles = await Promise.all(
-    files.map(async (fileName) => {
-      const { content, ...listArticle } = await getMarkdownArticle(fileName);
-      return listArticle;
-    })
-  );
+  const articles = (
+    (
+      await Promise.all(files.map((fileName) => getMarkdownArticle(fileName)))
+    ).filter((article) => !!article) as ArticleDTO[]
+  ).map(({ content, ...listArticle }) => listArticle as ListArticleDTO);
 
   if (listedOnly) return articles.filter((article) => article.isListed);
 
