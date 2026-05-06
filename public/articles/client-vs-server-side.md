@@ -6,7 +6,7 @@ tags: architecture, opinion, performance
 isListed: true
 ---
 
-GDG DevFest Tashkent 2025 da ["Browsers are the new OS"](/public/Browsers%20are%20the%20new%20OS.pdf) mavzusida gapirgandim. Mavzu bo'yicha qo'shimcha fikrlar:
+GDG DevFest Tashkent 2025 da ["Browsers are the new OS"](/Browsers%20are%20the%20new%20OS.pdf) mavzusida gapirgandim. Mavzu bo'yicha qo'shimcha fikrlar:
 
 Ba'zida client-side qilsa bo'ladigan narsalarni, serverda qilish to'g'riroq bo'ladi. Eng avvalo bu qaror sizning dasturingiz qiladigan ishga bog'liq. Shuni yanada aniqroq aytsam, dasturingiz hal qilishi kerak bo'lgan muammoga bog'liq.
 

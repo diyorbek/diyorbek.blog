@@ -30,27 +30,31 @@ export default function Blog({ posts }: BlogProps) {
             </i>
           </blockquote>
 
-          <div className="article-list grid grid-cols-1 gap-2">
+          <div className="article-list grid grid-cols-1 gap-1">
             {posts.length > 0 ? (
-              posts.map(({ slug, title, contentPreview, publishDate }) => (
-                <Link href={`/blog/${slug}`} key={slug}>
-                  <a className="hover:no-underline text-gray-700 hover:text-sky-600 dark:text-gray-200 dark:hover:text-sky-400">
-                    <span className="text-gray-400">
-                      {formatDate(publishDate)}
-                    </span>
+              posts.map(
+                ({ slug, title, contentPreview, publishDate, tags }) => (
+                  <Link href={`/blog/${slug}`} key={slug}>
+                    <a className="hover:no-underline text-gray-700 hover:text-sky-600 dark:text-gray-200 dark:hover:text-sky-400">
+                      <span className="text-gray-400 text-sm">
+                        {formatDate(publishDate)}
+                      </span>
 
-                    <h3 className="mt-2">{title}</h3>
+                      <h3 className="mt-0 mb-2">{title}</h3>
 
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      {/* <p className="text-gray-600 dark:text-gray-300 mb-4">
                       {contentPreview}...
-                    </p>
+                    </p> */}
+                      {/* 
+                      {tags.map((tag) => (
+                        <Tag key={tag}>{tag}</Tag>
+                      ))} */}
 
-                    {/* <Tag>React</Tag> */}
-
-                    <div className="divider my-4" />
-                  </a>
-                </Link>
-              ))
+                      <div className="divider m5-1" />
+                    </a>
+                  </Link>
+                ),
+              )
             ) : (
               <h2 className="mt-24 text-stone-400 text-center">No articles</h2>
             )}
