@@ -15,7 +15,7 @@ export async function getMarkdownArticleFiles(): Promise<string[]> {
 }
 
 export async function getMarkdownArticle(
-  fileName: string
+  fileName: string,
 ): Promise<ArticleDTO | null> {
   try {
     const dirPath = path.join(process.cwd(), 'public/articles');
@@ -36,7 +36,7 @@ export async function getMarkdownArticle(
 }
 
 export async function getMarkdownArticles(
-  { listedOnly } = { listedOnly: true }
+  { listedOnly } = { listedOnly: true },
 ): Promise<ListArticleDTO[]> {
   const files = await getMarkdownArticleFiles();
   const articles = (
@@ -69,7 +69,7 @@ function readMetadata(markdownContent: string): MarkdownMetadata {
       .replace(/<[^>]+>/g, '')
       .replace(/&#39;/g, "'")
       .replace(/&quot;/g, '"')
-      .substring(0, 150);
+      .substring(0, 100);
 
   return {
     ...data,
