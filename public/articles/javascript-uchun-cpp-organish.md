@@ -6,8 +6,6 @@ tags: js, cpp, learning, opinion
 isListed: true
 ---
 
-Nega?
-
 ## 1. JavaScript ostida C++ da yozilgan kodlar yotadi
 
 Hech o'ylab ko'rganmisiz, `setTimeout` o'zi qanday ishlaydi? Uning kodi qanday yozilgan?
@@ -37,8 +35,6 @@ Bu ham JS'da yo'q — desam xato gapirgan bo'laman. Shunchaki JS'da boshqacha ko
 ## 4. Har bir texnologiya aslida sodda texnologiyalar jamlanmasi ekanini tushunish
 
 Ularning murakkabligi o'sha jamlanmaning kattaligida, ko'pligida. Lupa ostiga olib qarasangiz ularning qanchalik sodda ekanligini ko'rasiz.
-
----
 
 *P.S. C++ dan tashqari Go, Rust kabi tillarni ham misol qilsam bo'lardi. Lekin ularda memory management bo'yicha qo'shimcha konstruksiyalar kiritilgan. Shu sabab "memory-management"ni yaxshi tushunish uchun C/C++ ga teng kelolmaydi (IMHO).*
 
