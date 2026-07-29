@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import React from 'react';
 import Avatar from '../components/Avatar';
 import ButtonLink from '../components/ButtonLink';
 import { GitHub } from '../components/icons/GitHub';
@@ -76,7 +75,7 @@ export default function Home() {
 
           <div className="w-70 flex sm:flex-row flex-col justify-between items-center mb-6">
             <ButtonLink
-              href="/Diyobek_Sadullaev_s_resume.pdf"
+              href="/Diyobek_Sadullaev_resume.pdf"
               className="mb-2 sm:mb-0"
             >
               Résumé

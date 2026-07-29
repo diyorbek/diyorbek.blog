@@ -49,7 +49,7 @@ export default function About() {
             I have skipped a lot of stories above because I am a bit lazy to
             write them all. But if you are interested in my professional skills,
             you can find them in my{' '}
-            <Link href="/Diyobek_Sadullaev_s_resume.pdf">résumé</Link>. 😬
+            <Link href="/Diyobek_Sadullaev_resume.pdf">résumé</Link>. 😬
           </p>
         </div>
       </PageContainer>
